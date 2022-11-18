@@ -49,8 +49,7 @@ body{
     color:#F3EDE2;  
     font-family: 'Be Vietnam Pro';
     font-style: normal;
-    font-weight: 400;
-    font-size: 15px;
+    font-size: 18px;
     line-height: 19px;
     text-align: center;
     align-self: start;
@@ -67,7 +66,11 @@ body{
     align-self: start;
     text-align: center;
     font-family: 'Be Vietnam Pro';
+    font-size: 20px;
     justify-self: center;
+    color: #F3EDE2;
+    text-decoration: none;
+    outline: none;
 }
 .password{
     grid-column: 2/3;
@@ -79,8 +82,11 @@ body{
     border-bottom:2px solid #F3EDE2;
     text-align: center;
     font-family: 'Be Vietnam Pro';
+    font-size: 20px;
     align-self: start;
     justify-self: center;
+    color: #F3EDE2;
+    outline: none;
 }
 
 .login-button{
@@ -99,4 +105,9 @@ body{
     line-height: 25px;
     align-self:start;
     justify-self: center;
+}
+.login-button:hover {
+    background-color: #F3EDE2;
+    color: #3D3838;
+    cursor:pointer;
 }
