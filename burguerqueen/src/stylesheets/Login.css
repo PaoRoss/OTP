@@ -1,0 +1,102 @@
+* {
+ margin: 0;
+ padding: 0;
+}
+
+body{
+    background-color:#101315;
+}
+
+.login-container{
+    display:grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-template-rows: repeat(8,1fr);
+    width: 1194px;
+    height: 834px;
+}
+
+.restaurant-image{
+    grid-column: 4/7;
+    grid-row: 1/9;
+    width: 609px;
+    height: 834px;
+}
+
+.logo{
+    grid-column: 2/3;
+    grid-row: 2/3;
+    width: 98px;
+    height: 78px;
+    align-self: center;
+    justify-self: center;
+}
+.welcome-letters{
+    grid-column: 2/3;
+    grid-row: 3/4;
+    width: 379px;
+    height: 30px;
+    font-family: 'Quicksand', sans-serif;
+    color:#F3EDE2;
+    text-align: center;
+    font-size: 24px;
+    line-height: 30px;
+    align-self: center;
+}
+
+.enter-details{
+    grid-column: 2/3;
+    grid-row: 4/5;
+    color:#F3EDE2;  
+    font-family: 'Be Vietnam Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 19px;
+    text-align: center;
+    align-self: start;
+}
+
+.username{
+    grid-column: 2/3;
+    grid-row: 5/6;
+    width: 311.01px;
+    height: 30px;
+    background-color: #101315;
+    border: none;
+    border-bottom:2px solid #F3EDE2;
+    align-self: start;
+    text-align: center;
+    font-family: 'Be Vietnam Pro';
+    justify-self: center;
+}
+.password{
+    grid-column: 2/3;
+    grid-row: 6/7;
+    width: 311.01px;
+    height: 30px;
+    background-color: #101315;
+    border: none;
+    border-bottom:2px solid #F3EDE2;
+    text-align: center;
+    font-family: 'Be Vietnam Pro';
+    align-self: start;
+    justify-self: center;
+}
+
+.login-button{
+    grid-column: 2/3;
+    grid-row: 7/8;
+    width: 311px;
+    height: 47px;
+    background: #3D3838;
+    border-radius: 10px;
+    color: #F3EDE2;
+    border:none;
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 25px;
+    align-self:start;
+    justify-self: center;
+}
