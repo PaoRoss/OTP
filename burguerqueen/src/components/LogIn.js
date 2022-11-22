@@ -2,6 +2,7 @@ import React from 'react';
 //import queen from '../images/queen.png'
 //import restaurant from '../images/restaurant.svg'
 import "../stylesheets/Login.css"
+import { getUser } from './getUsers.js';
 
 
 function Login() {
@@ -10,14 +11,23 @@ function Login() {
     const userValue = document.getElementById('username').value;
     const passwordValue = document.getElementById('password').value;
 
-    if(userValue.length < 6 || passwordValue.length < 6){
-      console.log("Ingresaste las credenciales correctas??")
-    } else if(userValue.includes('@')){
-      console.log("Felicidades,",userValue,"si trabajas en la mejor empresa del mundo mundial");
-    } else {
-      ("Lo sentimos,", userValue,"creo que no trabajas en la mejor empresa del mundo mundial o, intentalo de nuevo");
-    }
-    
+    const email = getUser();
+    const x = email.then(response => response.map(e => e.email))
+    /*const x = email.then(response => response.forEach(e => {
+      console.log(e.email, e.roles)
+      if(e.email.includes(userValue) && e.roles === false){
+        console.log('Gracias por venir a trabajar, no eres admin')
+      }else{
+        console.log('Tu ni siquiera trabajas aquí')
+      }
+     }))*/
+   x.then(response => {
+      if(response.includes(userValue)){
+        console.log('Gracias por venir a trabajar')
+      }else{
+        console.log('Tu ni siquiera trabajas aquí')
+      }
+    })
   }
 
   return (
