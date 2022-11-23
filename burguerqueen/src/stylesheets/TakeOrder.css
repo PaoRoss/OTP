@@ -1,0 +1,114 @@
+.menuContainer {
+    display: flex;
+    width: 1194px;
+    height: 834px;
+}
+
+.superiorNav {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #9D9999;
+    width: 1194px;
+    height: 106px;
+    position: absolute;
+}
+
+
+.logout-button {
+    display: flex;
+    width: 83px;
+    height: 30px;
+    margin: 44px 63px;
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    border: none;
+    color: #F3EDE2;
+    background-color: #101315;
+}
+
+.logo-waiter-layout {
+    position: absolute;
+    width: 81.67px;
+    height: 65px;
+    left: 1087px;
+    top: 27px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    width: 752.01px;
+    height: 834px;
+    left: 672px;
+    top: 858.01px;
+    border-right: 1px solid #9D9999;
+
+}
+
+.logo-logout {
+    display: flex;
+    position: absolute;
+    height: 31.42px;
+    width: 28.19px;
+    left: 25px;
+    top: 45px;
+}
+
+
+.breakfast-button {
+    position: absolute;
+    width: 192px;
+    height: 47px;
+    left: 24px;
+    top: 135px;
+    background: #3D3838;
+    border-radius: 10px;
+    border: none;
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+    color: #F3EDE2;
+}
+
+.breakfast-button:hover {
+    background-color: #F3EDE2;
+    color: #3D3838;
+    cursor: pointer;
+}
+
+.lunch-dinner-button {
+    position: absolute;
+    width: 192px;
+    height: 47px;
+    left: 240px;
+    top: 135px;
+    background: #3D3838;
+    border-radius: 10px;
+    border: none;
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+    color: #F3EDE2;
+}
+
+.lunch-dinner-button:hover {
+    background-color: #F3EDE2;
+    color: #3D3838;
+    cursor: pointer;
+}
+
+.lineOne {
+    position: absolute;
+    width: 1194px;
+    top: 212px;
+    border: .5px solid #9D9999;
+}
