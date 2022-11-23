@@ -1,0 +1,61 @@
+.product-card{
+    display: flex;
+    position: absolute;
+    width: 192px;
+    height: 121px;
+    left: 24px;
+    top: 236px;
+    background: #DE9468;
+    border-radius: 10px;
+}
+
+.product-id {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 10px;
+    top: 10px;
+    background: #ECEAEA;
+    border: 1px solid #FFFFFF;
+    border-radius: 50px;
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    color: #000000;
+}
+
+.product-name {
+    position: absolute;
+    width: 161px;
+    height: 25px;
+    left: 20px;
+    top: 50px;
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+    display: flex;
+   
+    color: #000000;
+}
+.product-price{
+position: absolute;
+width: 56px;
+height: 20px;
+left: 122px;
+top: 90px;
+font-family: 'Quicksand';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 20px;
+
+text-align: center;
+
+color: #000000;
+
+}
