@@ -1,0 +1,52 @@
+.product-card{
+    position: relative;
+    margin: 0 0 24px 24px;
+    width: 192px;
+    height: 121px;
+    top: 130px;
+    background: #DE9468;
+    border-radius: 10px;
+}
+
+.product-id {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 10px;
+    top: 10px;
+    background: #ECEAEA;
+    border: 1px solid #FFFFFF;
+    border-radius: 50px;
+    font-family: 'Quicksand';
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    color: #000000;
+}
+
+.product-name {
+    position: relative;
+    top: 36px;
+    font-family: 'Quicksand';
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+    justify-content: center;
+    color: #000000;
+}
+.product-price{
+position: absolute;
+width: 56px;
+height: 20px;
+left: 122px;
+top: 90px;
+font-family: 'Quicksand';
+
+font-weight: 700;
+font-size: 16px;
+line-height: 20px;
+text-align: center;
+color: #000000;
+
+}

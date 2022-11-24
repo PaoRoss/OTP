@@ -10,7 +10,7 @@ import {routerAuth} from './components/auth/routerAuth'
 
 
 function App() {
-  const [user, setUser]= useState(null)
+  const [user, setUser]= useState("pao")
   //use efect setUser
   return (
    <div> {user?<RouterProvider router={routerAuth} />:<RouterProvider router={routerNoAuth} />}</div>
