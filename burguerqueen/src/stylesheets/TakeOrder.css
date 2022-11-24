@@ -37,16 +37,19 @@
     top: 27px;
 }
 
-.menu {
+.product-card-container {
     display: flex;
-    flex-direction: row;
-    width: 752.01px;
-    height: 834px;
-    left: 672px;
-    top: 858.01px;
-    border-right: 1px solid #9D9999;
-
+    flex-wrap: wrap;
+    align-content: flex-start;
 }
+
+.menu {
+    margin-top: 106px;
+    flex-direction: row;
+    width: 674px;
+    border-right: 1px solid #9D9999;
+}
+
 
 .logo-logout {
     display: flex;
@@ -68,11 +71,8 @@
     border-radius: 10px;
     border: none;
     font-family: 'Quicksand';
-    font-style: normal;
     font-weight: 600;
     font-size: 20px;
-    line-height: 25px;
-    text-align: center;
     color: #F3EDE2;
 }
 
@@ -92,11 +92,8 @@
     border-radius: 10px;
     border: none;
     font-family: 'Quicksand';
-    font-style: normal;
     font-weight: 600;
     font-size: 20px;
-    line-height: 25px;
-    text-align: center;
     color: #F3EDE2;
 }
 
@@ -110,5 +107,23 @@
     position: absolute;
     width: 1194px;
     top: 212px;
-    border: .5px solid #9D9999;
+    border-bottom: 1px solid #9D9999;
+}
+
+.logo-person {
+    display: flex;
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    left: 24px;
+    top: 753px;
+}
+.waiter-name {
+    display: flex;
+    position: absolute;
+    font-family: 'Be Vietnam Pro';
+    font-size: 20px;
+    left: 65px;
+    top: 758px;
+    color: #F3EDE2;
 }

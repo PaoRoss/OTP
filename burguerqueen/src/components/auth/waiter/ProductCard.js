@@ -1,4 +1,4 @@
-import '../stylesheets/ProductCard.css'
+import '../../../stylesheets/ProductCard.css'
 
 function ProductCard(props){
     return(
