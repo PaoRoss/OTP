@@ -1,5 +1,6 @@
 import React from 'react';
 import ProductCard from './ProductCard';
+import OrderDetails from './OrderDetails';
 import '../../../stylesheets/TakeOrder.css';
 
 function Menu() {
@@ -44,17 +45,28 @@ function Menu() {
       <section className='order-summary-container'>
         <h3>Order summary</h3>
         <div className='input-customer-name'>
-          <label>Customer's name</label>
-          <input type='text'></input>
+          <label>Customer's Name </label>
+          <input type="text"></input>
         </div>
         <div className='order-description'>
-          <p>QTY</p>
-          <p>Name</p>
-          <p>Price</p>
-          <p>Delete</p>
+          <table>
+            <tr>
+              <th> QTY </th>
+              <th> Name </th>
+              <th> Price </th>
+              <th> Delete </th>
+            </tr>
+          </table>
+          <OrderDetails
+            qty="2"
+            name="Simple Hamburger"
+            price="20.00" />
+          <p> Total price</p> 
+          <p>$ 20.00</p> 
+          <button className="send-to-kitchen-button" type="submit" onClick={() => x()}>Send to kitchen</button>
         </div>
       </section>
-    </div> 
+    </div>
   );
 }
 
