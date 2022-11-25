@@ -61,8 +61,8 @@ function Menu() {
             qty="2"
             name="Simple Hamburger"
             price="20.00" />
-          <p> Total price</p> 
-          <p>$ 20.00</p> 
+          <p className="price"> Total price</p> 
+          <p className="number-price">$ 20.00</p> 
           <button className="send-to-kitchen-button" type="submit" onClick={() => x()}>Send to kitchen</button>
         </div>
       </section>
