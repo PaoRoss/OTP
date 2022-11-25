@@ -1,5 +1,6 @@
 import React from 'react';
 import ProductCard from './ProductCard';
+import OrderDetails from './OrderDetails';
 import '../../../stylesheets/TakeOrder.css';
 
 function Menu() {
@@ -41,7 +42,30 @@ function Menu() {
         <img className="logo-person" src={require('../../../images/person-pin.png')} alt="Person icon" />
         <p className="waiter-name">Daenerys Targaryen</p>
       </main>
-
+      <section className='order-summary-container'>
+        <h3>Order summary</h3>
+        <div className='input-customer-name'>
+          <label>Customer's Name </label>
+          <input type="text"></input>
+        </div>
+        <div className='order-description'>
+          <table>
+            <tr>
+              <th> QTY </th>
+              <th> Name </th>
+              <th> Price </th>
+              <th> Delete </th>
+            </tr>
+          </table>
+          <OrderDetails
+            qty="2"
+            name="Simple Hamburger"
+            price="20.00" />
+          <p> Total price</p> 
+          <p>$ 20.00</p> 
+          <button className="send-to-kitchen-button" type="submit" onClick={() => x()}>Send to kitchen</button>
+        </div>
+      </section>
     </div>
   );
 }
