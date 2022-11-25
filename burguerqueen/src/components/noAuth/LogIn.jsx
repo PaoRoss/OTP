@@ -1,8 +1,8 @@
 import React from 'react';
 //import queen from '../images/queen.png'
 //import restaurant from '../images/restaurant.svg'
-import '../../stylesheets/Login.css'
-import { getUser } from '../getUsers.js';
+import '../../stylesheets/Login.css';
+import { getUser } from '../getUsers';
 
 
 function Login() {

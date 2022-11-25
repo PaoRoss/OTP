@@ -1,6 +1,7 @@
 import '../../../stylesheets/ProductCard.css'
+import React from 'react';
 
-function ProductCard(props){
+function ProductCard(props) {
     return(
         <div className="product-card">
            <p className="product-id"> {props.id} </p>
