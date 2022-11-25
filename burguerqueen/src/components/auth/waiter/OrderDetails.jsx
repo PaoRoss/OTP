@@ -1,3 +1,5 @@
+import '../../../stylesheets/TakeOrder.css';
+
 function OrderDetails(props){
     return(
         <table>
@@ -5,7 +7,7 @@ function OrderDetails(props){
             <td>{props.qty}</td>
             <td>{props.name}</td>
             <td>{props.price}</td>
-            <img src={require('../../../images/delete.png')} />
+            <td><img src={require('../../../images/delete.png')} /></td>
             </tr>
         </table>
     )
