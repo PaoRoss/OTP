@@ -1,3 +1,5 @@
+import '../../../stylesheets/OrderDetails.css';
+
 function OrderDetails(props){
     return(
         <table>
