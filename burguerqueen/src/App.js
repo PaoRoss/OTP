@@ -1,6 +1,6 @@
 // import queen from './queen.png';
 import './App.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
   RouterProvider,
   Route,
@@ -9,25 +9,18 @@ import { routerNoAuth } from './components/noAuth/routerNoAuth';
 import { routerAuth } from './components/auth/routerAuth';
 
 function App() {
-  const [user, setUser] = useState('pao');
+  const [user, setUser] = useState(null);
   // use efect setUser
+  const changeUser = () => {
+    //aqui la logica de la funcion
+    setUser('Pao')
+  }
+  useEffect(() =>{},[])
   return (
     <div>
       {' '}
-      {user ? <RouterProvider router={routerAuth} /> : <RouterProvider router={routerNoAuth} />}
+      {user ? <RouterProvider router={routerAuth(user)} /> : <RouterProvider router={routerNoAuth(changeUser)} />}
     </div>
-  /*
-    <div className="App">
-      <header className="App-header">
-        <img src={queen} className="App-logo" alt="logo" />
-        <p className="App-orange">
-          Burger Queen WorkSpace
-        </p>
-        <p>
-          Coming soon ...
-        </p>
-      </header>
-    </div> */
   );
 }
 
