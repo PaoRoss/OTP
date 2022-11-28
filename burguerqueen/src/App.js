@@ -9,25 +9,13 @@ import { routerNoAuth } from './components/noAuth/routerNoAuth';
 import { routerAuth } from './components/auth/routerAuth';
 
 function App() {
-  const [user, setUser] = useState('pao');
+  const [user, setUser] = useState('kini@perrito.net');
   // use efect setUser
   return (
     <div>
       {' '}
-      {user ? <RouterProvider router={routerAuth} /> : <RouterProvider router={routerNoAuth} />}
+      {user ? <RouterProvider router={routerAuth(user)} /> : <RouterProvider router={routerNoAuth} />}
     </div>
-  /*
-    <div className="App">
-      <header className="App-header">
-        <img src={queen} className="App-logo" alt="logo" />
-        <p className="App-orange">
-          Burger Queen WorkSpace
-        </p>
-        <p>
-          Coming soon ...
-        </p>
-      </header>
-    </div> */
   );
 }
 
