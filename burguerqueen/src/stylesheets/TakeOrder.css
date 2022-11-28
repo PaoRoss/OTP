@@ -167,7 +167,7 @@ label {
     color: #F3EDE2;
 }
 
-input {
+.customer-name-input {
     font-family: 'Quicksand';
     font-size: 20px;
     position: absolute;
