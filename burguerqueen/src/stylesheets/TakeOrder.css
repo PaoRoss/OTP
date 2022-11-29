@@ -181,6 +181,31 @@ label {
     border: none;
 }
 
+.order-description {
+    position: absolute;
+    width: 550px;
+    height: 28px;
+    top: 236px;
+    text-align: center;
+    color: #F3EDE2;
+    text-align: center;
+    left:660px;
+}
+
+th {
+    table-layout: fixed;
+    width: 650px;
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 28px;
+    height: 28px;
+    left: 900px;
+    top: 236px;
+
+}
+
 .price {
     position: absolute;
     width: 127px;
@@ -231,3 +256,4 @@ label {
     text-align: center;
     color: #F3EDE2;
 }
+

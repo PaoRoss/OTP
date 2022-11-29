@@ -24,6 +24,7 @@ function Login() {
    x.then(response => {
       if(response.includes(userValue)){
         console.log('Gracias por venir a trabajar')
+        setUser(userValue)
       }else{
         console.log('Tu ni siquiera trabajas aquí')
       }

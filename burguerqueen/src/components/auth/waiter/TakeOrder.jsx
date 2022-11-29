@@ -4,7 +4,7 @@ import OrderDetails from './OrderDetails';
 import '../../../stylesheets/TakeOrder.css';
 import '../../../stylesheets/OrderDetails.css';
 
-function Menu() {
+function Menu({user}) {
   return (
     <div className='menuContainer'>
       <nav className='superiorNav'>
@@ -41,7 +41,7 @@ function Menu() {
           />
         </div>
         <img className='logo-person' src={require('../../../images/person-pin.png')} alt='Person icon' />
-        <p className='waiter-name'>Daenerys Targaryen</p>
+        <p className='waiter-name'>{user}</p>
       </main>
       <section className='order-summary-container'>
         <h3>Order summary</h3>

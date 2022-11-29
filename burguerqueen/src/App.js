@@ -14,9 +14,8 @@ function App() {
   return (
     <div>
       {' '}
-      {user ? <RouterProvider router={routerAuth} /> : <RouterProvider router={routerNoAuth} />}
+      {user ? <RouterProvider router={routerAuth(user, setUser)} /> : <RouterProvider router={routerNoAuth} />}
     </div>
-  
   );
 }
 

@@ -1,4 +1,4 @@
-import '../../../stylesheets/TakeOrder.css';
+import '../../../stylesheets/OrderDetails.css';
 
 function OrderDetails(props){
     return(
