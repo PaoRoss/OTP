@@ -1,4 +1,4 @@
-.menuContainer {
+.adminContainer {
     display: flex;
     width: 1194px;
     height: 834px;
@@ -12,7 +12,6 @@
     height: 106px;
     position: absolute;
 }
-
 
 .logout-button {
     display: flex;
@@ -29,7 +28,7 @@
     background-color: #101315;
 }
 
-.logo-waiter-layout {
+.logo-admin-layout {
     position: absolute;
     width: 81.67px;
     height: 65px;
@@ -37,19 +36,18 @@
     top: 27px;
 }
 
-.product-card-container {
+.add-container {
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
 }
 
-.menu {
+.table {
     margin-top: 106px;
     flex-direction: row;
     width: 674px;
     border-right: 1px solid #9D9999;
 }
-
 
 .logo-logout {
     display: flex;
@@ -60,8 +58,7 @@
     top: 45px;
 }
 
-
-.breakfast-button {
+.add-user-button {
     position: absolute;
     width: 192px;
     height: 47px;
@@ -76,13 +73,13 @@
     color: #F3EDE2;
 }
 
-.breakfast-button:hover {
+.add-user-button:hover {
     background-color: #F3EDE2;
     color: #3D3838;
     cursor: pointer;
 }
 
-.lunch-dinner-button {
+.add-product-button {
     position: absolute;
     width: 192px;
     height: 47px;
@@ -97,7 +94,7 @@
     color: #F3EDE2;
 }
 
-.lunch-dinner-button:hover {
+.add-product-button:hover {
     background-color: #F3EDE2;
     color: #3D3838;
     cursor: pointer;
@@ -118,7 +115,8 @@
     left: 24px;
     top: 753px;
 }
-.waiter-name {
+
+.admin-name {
     display: flex;
     position: absolute;
     font-family: 'Be Vietnam Pro';
@@ -128,60 +126,126 @@
     color: #F3EDE2;
 }
 
-
-.order-sumary-container {
+.add-container {
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
 
 }
 
-.order-summary-text {
+.current-user-text {
     position: absolute;
-    width: 520px;
-    height: 34px;
-    left: 675px;
-    top: 113px;
+    width: 230px;
+    height: 35px;
+    left: 833px;
+    top: 141px;
     font-family: 'Quicksand';
     font-style: normal;
     font-weight: 600;
-    font-size: 20px;
-    line-height: 25px;
+    font-size: 28px;
+    line-height: 35px;
     text-align: center;
-    border-bottom: 1px solid #9D9999;
     color: #F3EDE2;
 }
 
-label {
+.instructions-to-add {
+
+    position: absolute;
+    text-align: left;
+    width: 350px;
+    height: 30px;
+    left: 24px;
+    top: 236px;
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+    color: #F3EDE2;
+}
+
+.label-user-name {
     position: absolute;
     width: 175px;
     height: 27px;
-    left: 695px;
-    top: 166px;
+    left: 24px;
+    top: 301px;
     font-family: 'Quicksand';
     font-style: normal;
     font-weight: 500;
     font-size: 20px;
     line-height: 25px;
-    text-align: center;
     color: #F3EDE2;
+    text-align: left;
 }
 
-.customer-name-input {
+.label-credencial-name {
+    position: absolute;
+    width: 175px;
+    height: 27px;
+    left: 24px;
+    top: 367px;
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 25px;
+    color: #F3EDE2;
+    text-align: left;
+}
+
+.user-name-input {
     font-family: 'Quicksand';
     font-size: 20px;
     position: absolute;
-    width: 290px;
+    width: 425px;
     height: 43px;
-    left: 879px;
-    top: 158px;
+    left: 222px;
+    top: 359px;
     background: #3D3838;
     border-radius: 10px;
     color: #F3EDE2;
     border: none;
 }
 
-.order-description {
+.user-credencial-input {
+    font-family: 'Quicksand';
+    font-size: 20px;
+    position: absolute;
+    width: 425px;
+    height: 43px;
+    left: 222px;
+    top: 293px;
+    background: #3D3838;
+    border-radius: 10px;
+    background: #3D3838;
+    border-radius: 10px;
+    color: #F3EDE2;
+    border: none;
+}
+
+.create-user-button {
+    box-sizing: border-box;
+    position: absolute;
+    width: 472px;
+    height: 47px;
+    left: 99px;
+    top: 643px;
+    background: #3D3838;
+    border: 2px solid #F3EDE2;
+    border-radius: 10px;
+    position: absolute;
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+    color: #F3EDE2;
+}
+
+.user-description {
     position: absolute;
     width: 550px;
     height: 28px;
@@ -189,7 +253,7 @@ label {
     text-align: center;
     color: #F3EDE2;
     text-align: center;
-    left:660px;
+    left: 660px;
 }
 
 th {
@@ -203,57 +267,4 @@ th {
     height: 28px;
     left: 900px;
     top: 236px;
-
 }
-
-.price {
-    position: absolute;
-    width: 127px;
-    height: 30px;
-    left: 48px;
-    top: 400px;
-    margin-bottom: 50px;
-    font-family: 'Be Vietnam Pro';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 30px;
-    text-align: center;
-    color: #F3EDE2;
-}
-.number-price {
-    position: absolute;
-    width: 127px;
-    height: 30px;
-    left: 410px;
-    top: 400px;
-    margin-bottom: 50px;
-    font-family: 'Be Vietnam Pro';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 30px;
-    text-align: center;
-    color: #F3EDE2;
-}
-
-.send-to-kitchen-button {
-    position: absolute;
-    box-sizing: border-box;
-    width: 472px;
-    height: 47px;
-    left: 52px;
-    top: 500px;
-    background: #3D3838;
-    border: 2px solid #F3EDE2;
-    border-radius: 10px;
-    font-family: 'Quicksand';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 25px;
-    /* identical to box height */
-    text-align: center;
-    color: #F3EDE2;
-}
-

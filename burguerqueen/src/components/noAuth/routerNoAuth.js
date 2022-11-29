@@ -4,7 +4,7 @@ import {
   } from 'react-router-dom';
 import Login from '../noAuth/LogIn';
 
-export const routerNoAuth = ({changeUser}) => {
+export const routerNoAuth = (changeUser) => {
   return createBrowserRouter([
     {
       path: '/',

@@ -9,13 +9,14 @@ import { routerNoAuth } from './components/noAuth/routerNoAuth';
 import { routerAuth } from './components/auth/routerAuth';
 
 function App() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState('Pao');
   // use efect setUser
-  const changeUser = () => {
+  const changeUser = (userEmail) => {
     //aqui la logica de la funcion
-    setUser('Pao')
-  }
-  useEffect(() =>{},[])
+    setUser(userEmail);
+    //console.log('hello')
+  };
+  //useEffect(() =>{},[])
   return (
     <div>
       {' '}
