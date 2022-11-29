@@ -44,7 +44,7 @@ function Menu({user}) {
         <p className='waiter-name'>{user}</p>
       </main>
       <section className='order-summary-container'>
-        <h3>Order summary</h3>
+        <h3 className='order-summary-text'>Order summary</h3>
         <div className='input-customer-name'>
           <label>Customer's Name </label>
           <input className='customer-name-input' type='text'></input>
