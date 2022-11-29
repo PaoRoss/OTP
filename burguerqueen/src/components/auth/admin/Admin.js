@@ -21,7 +21,8 @@ function Admin({user}) {
             <label className='label-user-name'>User Name </label>
             <input className='user-name-input' type='text'></input>
             <label className='label-credencial-name'>User Credencial </label>
-            <input className='user-credencial-input' type='text'></input>
+            <input className='user-credencial-input' type={'email'}></input>
+            <button className='create-user-button' type='submit' onClick={() => x()}>Create User</button>
         </div>
         <img className='logo-person' src={require('../../../images/person-pin.png')} alt='Person icon' />
         <p className='admin-name'>{user}</p>

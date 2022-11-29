@@ -177,7 +177,7 @@
     font-size: 20px;
     line-height: 25px;
     color: #F3EDE2;
-    text-align:left;
+    text-align: left;
 }
 
 .label-credencial-name {
@@ -192,7 +192,7 @@
     font-size: 20px;
     line-height: 25px;
     color: #F3EDE2;
-    text-align:left;
+    text-align: left;
 }
 
 .user-name-input {
@@ -224,6 +224,27 @@
     color: #F3EDE2;
     border: none;
 }
+
+.create-user-button {
+    box-sizing: border-box;
+    position: absolute;
+    width: 472px;
+    height: 47px;
+    left: 99px;
+    top: 643px;
+    background: #3D3838;
+    border: 2px solid #F3EDE2;
+    border-radius: 10px;
+    position: absolute;
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+    color: #F3EDE2;
+}
+
 .user-description {
     position: absolute;
     width: 550px;
