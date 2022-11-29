@@ -1,20 +1,12 @@
-td {
-    border: none;
-    word-wrap: break-word;
-    font-family: 'Be Vietnam Pro';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 25px;
-    color: #F3EDE2;
-    width: 428px;
-    height: 26px;
-    left: 714.66px;
-    top: 285px;
 
+td {
+    font-family: 'Quicksand';
+    font-weight: 600;
+    font-size: 22px;
+    text-align: center;
 }
 
-img {
-    width: 26.66px;
-    height: 24px;
+img.deleteIcon{
+    width: 30px;
+    height: 28px;
 }

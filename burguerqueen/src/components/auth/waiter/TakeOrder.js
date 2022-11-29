@@ -18,7 +18,7 @@ function Menu({user}) {
           <div className='lineOne' />
         </section>
         <div className='product-card-container'>
-          <ProductCard
+          <ProductCard className='firstCard'
             id='1'
             name='American Coffe'
             price='$10.00'
@@ -50,17 +50,19 @@ function Menu({user}) {
         </div>
         <div className='order-description'>
           <table>
-            <tr>
-              <th> QTY </th>
-              <th> Name </th>
-              <th> Price </th>
-              <th> Delete </th>
-            </tr>
-          </table>
+            <thead>
+              <tr>
+                <th> QTY </th>
+                <th> Name </th>
+                <th> Price </th>
+                <th> Delete </th>
+              </tr>
+            </thead>
           <OrderDetails
             qty='2'
             name='Simple Hamburger'
             price='20.00' />
+          </table>
           <p className='price'> Total price</p> 
           <p className='number-price'>$ 20.00</p> 
           <button className='send-to-kitchen-button' type='submit' onClick={() => x()}>Send to kitchen</button>

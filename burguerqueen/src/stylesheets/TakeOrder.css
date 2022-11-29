@@ -1,3 +1,4 @@
+
 .menuContainer {
     display: flex;
     width: 1194px;
@@ -171,7 +172,7 @@ label {
     font-family: 'Quicksand';
     font-size: 20px;
     position: absolute;
-    width: 290px;
+    width: 266px;
     height: 43px;
     left: 879px;
     top: 158px;
@@ -179,76 +180,48 @@ label {
     border-radius: 10px;
     color: #F3EDE2;
     border: none;
+    outline: none;
+    padding-left: 24px;
 }
 
 .order-description {
     position: absolute;
-    width: 550px;
-    height: 28px;
+    width: 474px;
     top: 236px;
-    text-align: center;
     color: #F3EDE2;
-    text-align: center;
-    left:660px;
-}
-
-th {
-    table-layout: fixed;
-    width: 650px;
-    font-family: 'Quicksand';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 22px;
-    line-height: 28px;
-    height: 28px;
-    left: 900px;
-    top: 236px;
-
+    margin: 0px 24px 0px 24px;
 }
 
 .price {
     position: absolute;
-    width: 127px;
-    height: 30px;
-    left: 48px;
     top: 400px;
-    margin-bottom: 50px;
     font-family: 'Be Vietnam Pro';
-    font-style: normal;
     font-weight: 400;
     font-size: 24px;
-    line-height: 30px;
-    text-align: center;
     color: #F3EDE2;
 }
+
 .number-price {
     position: absolute;
-    width: 127px;
-    height: 30px;
-    left: 410px;
+    width: 95px;
+    left: 380px;
     top: 400px;
-    margin-bottom: 50px;
     font-family: 'Be Vietnam Pro';
-    font-style: normal;
     font-weight: 400;
     font-size: 24px;
-    line-height: 30px;
     text-align: center;
     color: #F3EDE2;
 }
 
 .send-to-kitchen-button {
     position: absolute;
-    box-sizing: border-box;
     width: 472px;
     height: 47px;
-    left: 52px;
     top: 500px;
     background: #3D3838;
     border: 2px solid #F3EDE2;
     border-radius: 10px;
     font-family: 'Quicksand';
-    font-style: normal;
     font-weight: 600;
     font-size: 20px;
     line-height: 25px;
