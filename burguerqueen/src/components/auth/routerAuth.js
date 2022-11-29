@@ -5,7 +5,7 @@ import {
 import Menu from './waiter/TakeOrder';
 import Admin from './admin/Admin';
 
-export const routerAuth = ( {user, setUser} ) => {
+export const routerAuth = ( user ) => {
   return createBrowserRouter([
   {
     path: '/',

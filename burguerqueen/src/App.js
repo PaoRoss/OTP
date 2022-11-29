@@ -9,12 +9,12 @@ import { routerNoAuth } from './components/noAuth/routerNoAuth';
 import { routerAuth } from './components/auth/routerAuth';
 
 function App() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState('kini@perrito.net');
   // use efect setUser
   return (
     <div>
       {' '}
-      {user ? <RouterProvider router={routerAuth(user, setUser)} /> : <RouterProvider router={routerNoAuth} />}
+      {user ? <RouterProvider router={routerAuth(user)} /> : <RouterProvider router={routerNoAuth} />}
     </div>
   );
 }
