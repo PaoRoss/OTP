@@ -14,7 +14,6 @@
     position: absolute;
 }
 
-
 .logout-button {
     display: flex;
     width: 83px;
@@ -50,7 +49,6 @@
     width: 674px;
     border-right: 1px solid #9D9999;
 }
-
 
 .logo-logout {
     display: flex;
@@ -186,10 +184,18 @@ label {
 
 .order-description {
     position: absolute;
-    width: 474px;
+    width: 522px;
     top: 236px;
     color: #F3EDE2;
-    margin: 0px 24px 0px 24px;
+    margin: 0px 24px 0px 14px;
+}
+
+.style-name-column {
+    width: 200px;
+    padding: 0 20px;
+}
+.style-delete-column {
+    width: 100px;
 }
 
 .price {
@@ -199,6 +205,7 @@ label {
     font-weight: 400;
     font-size: 24px;
     color: #F3EDE2;
+    margin-left: 10px;
 }
 
 .number-price {
@@ -228,5 +235,5 @@ label {
     /* identical to box height */
     text-align: center;
     color: #F3EDE2;
+    margin-left: 12px;
 }
-

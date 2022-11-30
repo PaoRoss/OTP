@@ -111,3 +111,17 @@ body{
     color: #3D3838;
     cursor:pointer;
 }
+
+.error {
+    color: rgb(255, 145, 0);
+    grid-column: 2/3;
+    grid-row: 5/6;
+    align-self: center;
+    justify-self: center;
+    font-family: 'Be Vietnam Pro';
+    margin-top: 40px;
+}
+
+.error-hidden {
+    display: none;
+}

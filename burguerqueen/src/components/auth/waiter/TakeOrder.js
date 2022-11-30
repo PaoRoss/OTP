@@ -53,9 +53,9 @@ function Menu({user}) {
             <thead>
               <tr>
                 <th> QTY </th>
-                <th> Name </th>
+                <th className='style-name-column'> Name </th>
                 <th> Price </th>
-                <th> Delete </th>
+                <th className='style-delete-column'> Delete </th>
               </tr>
             </thead>
           <OrderDetails

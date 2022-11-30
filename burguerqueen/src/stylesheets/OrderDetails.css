@@ -2,11 +2,12 @@
 td {
     font-family: 'Quicksand';
     font-weight: 600;
-    font-size: 22px;
+    font-size: 20px;
     text-align: center;
+    padding: 10px;
 }
 
 img.deleteIcon{
-    width: 30px;
+    width: 28px;
     height: 28px;
 }
