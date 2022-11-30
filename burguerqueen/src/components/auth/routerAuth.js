@@ -5,7 +5,8 @@ import {
 import Menu from './waiter/TakeOrder';
 import Admin from './admin/Admin';
 
-export const routerAuth = ( user ) => {
+export const routerAuth = (user) => {
+  console.log(user)
   return createBrowserRouter([
   {
     path: '/',
@@ -13,7 +14,7 @@ export const routerAuth = ( user ) => {
   },
   {
     path: '/admin',
-    element: <Admin />,
+    element: <Admin user={user}/>,
   },
 ]);
 }

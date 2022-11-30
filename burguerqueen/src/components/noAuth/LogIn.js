@@ -1,34 +1,37 @@
 import React from 'react';
 //import queen from '../images/queen.png'
 //import restaurant from '../images/restaurant.svg'
-import '../../stylesheets/Login.css'
-import { getUser } from '../getUsers.js';
+import '../../stylesheets/Login.css';
+import { getUser } from '../getUsers';
+import { useState } from 'react'
 
 
-function Login() {
+function Login(props) {
 
-  function h() {
-    const userValue = document.getElementById('username').value;
-    const passwordValue = document.getElementById('password').value;
+  const [user, setUser] = useState('')
+  const handleChange = e =>{
+    e.preventDefault();
+    setUser(e.target.value);
+    //console.log(e.target.value)
+  }
 
+  const handleLogin = () => {
+    //console.log(e.target.value);
+    // const userValue = document.getElementById('username').value;
+    // console.log(userValue);
+    // changeUser();
     const email = getUser();
     const x = email.then(response => response.map(e => e.email))
-    /*const x = email.then(response => response.forEach(e => {
-      console.log(e.email, e.roles)
-      if(e.email.includes(userValue) && e.roles === false){
-        console.log('Gracias por venir a trabajar, no eres admin')
-      }else{
-        console.log('Tu ni siquiera trabajas aquí')
-      }
-     }))*/
    x.then(response => {
-      if(response.includes(userValue)){
+      if(response.includes(user)){
         console.log('Gracias por venir a trabajar')
-        setUser(userValue)
+        props.changeUser(user);
+        
       }else{
         console.log('Tu ni siquiera trabajas aquí')
       }
     })
+
   }
 
   return (
@@ -37,9 +40,9 @@ function Login() {
       <img className='logo' src={require('../../images/queen.png')} alt='Logo' />
       <h1 className='welcome-letters' >Welcome back to Burguer Queen</h1>
       <p className='enter-details' >Please enter your details.</p>
-      <input className='username' id='username' placeholder='User name'></input>
+      <input className='username' id='username' placeholder='Username' onChange={handleChange}></input>
       <input className='password' id='password' type='password' placeholder='Password'></input>
-      <button className='login-button' type='submit' onClick={() => h()}>Login</button>
+      <button className='login-button' type='submit' onClick={handleLogin}>Login</button>
     </div>
   )
 }
