@@ -19,9 +19,9 @@ function Admin({user}) {
         <div className='add-container'>
             <h3 className='instructions-to-add'> Add the information required </h3>
             <label className='label-user-name'>User name:</label>
-            <input className='user-name-input' type='text'></input>
-            <label className='label-credencial-name'>User credencial:</label>
-            <input className='user-credencial-input' type={'email'}></input>
+            <input className='user-name-input' type='text' placeholder='Email'></input>
+            <label className='label-credencial-name' >User credencial:</label>
+            <input className='user-credencial-input' placeholder='User name' type={'email'}></input>
             <button className='create-user-button' type='submit' onClick={() => x()}>Create user</button>
         </div>
         <img className='logo-person' src={require('../../../images/person-pin.png')} alt='Person icon' />
@@ -35,7 +35,7 @@ function Admin({user}) {
           <table>
             <tr>
               <th>ID </th>
-              <th> User </th>
+              <th className='table-user'> User </th>
               <th> Role </th>
               <th> Edit </th>
               <th> Delete </th>
