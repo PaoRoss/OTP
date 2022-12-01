@@ -17,4 +17,7 @@ export const routerAuth = (user) => {
     element: <Admin user={user}/>,
   },
 ]);
+ /* if(user.rol=='admin'){
+    
+  }*/
 }

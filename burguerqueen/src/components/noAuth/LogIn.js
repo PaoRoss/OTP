@@ -24,18 +24,20 @@ function Login(props) {
     // changeUser();
     const email = getUser();
     const x = email.then(response => response.map(e => {
-      return{userName: e.email, userPassword: e.userPassword}
+      return{userName: e.email, userPassword: e.password, isAdmin: e.roles[0].admin, isWaiter: e.roles[0].waiter}
     }))
+  
     x.then(response => {
      if(response.find(element => element.userName === user)){
-      console.log(response)
-      props.changeUser(user);
+      const userInfo = response.find(element =>  element.userName === user);
+      console.log(userInfo)
+      props.changeUser(userInfo.userName, userInfo.isAdmin);
+      //props.changeUser(user);
     }else{
       setErrorMessage(true);
       console.log('Tu ni siquiera trabajas aquí')
     }
     })
- 
   }
   return (
     <div className='login-container'>
