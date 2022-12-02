@@ -7,22 +7,30 @@ import Admin from './admin/Admin';
 
 export const routerAuth = (user, role) => {
   console.log(user)
-  if (role === false){
-  return createBrowserRouter([
-  {
-    path: '/',
-    element: <Menu user={user} />,
-  },
-])
-  } else {
-  return createBrowserRouter([
-    {
-      path: '/',
-      element: <Admin user={user}/>,
-    },
-  ])
+  if(role === false){
+    return createBrowserRouter([
+        {
+          path: '/',
+          element: <Menu user={user} />,
+        }])
+  } else{
+    return createBrowserRouter([
+        {
+          path: '/',
+          element: <Admin user={user}/>,
+        },
+      ]);
   }
- /*if(role ==='true'){
-    useNavigate()
-  }*/
 }
+
+// Antes --si quieren lo pueden borrar después--
+//   return createBrowserRouter([
+//   {
+//     path: '/',
+//     element: <Menu user={user} />,
+//   },
+//   {
+//     path: '/admin',
+//     element: <Admin user={user}/>,
+//   },
+// ]);

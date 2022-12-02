@@ -13,7 +13,7 @@ function App() {
   const [role, setRole] = useState(null);
   // user:¨
   // {email, rol}
-  // use efect setUser  'kini@perrito.net'
+  // use efect setUser 
   const changeUser = (userEmail, role) => {
     //aqui la logica de la funcion
     console.log(userEmail);
@@ -24,8 +24,7 @@ function App() {
   //useEffect(() =>{},[])
   return (
     <>
-      {user ? <RouterProvider router={routerAuth(user,role)}   /> : <RouterProvider router={routerNoAuth(changeUser)} />}
-   {/*<RouterProvider router={routerAuth(user)}   />*/}   
+      {user ? <RouterProvider router={routerAuth(user, role)}   /> : <RouterProvider router={routerNoAuth(changeUser)} />}
    </>
   );
 }

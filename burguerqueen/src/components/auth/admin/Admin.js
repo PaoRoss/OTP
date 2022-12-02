@@ -1,19 +1,23 @@
 import React from 'react';
 import '../../../stylesheets/Admin.css';
+import Button from '../../generalComponents/Button';
+import NavBar from '../../generalComponents/NavBar';
+import SendButton from '../../generalComponents/SendButton';
+import '../../../stylesheets/TakeOrder.css'
 
 
 function Admin({user}) {
   return (
     <div className='adminContainer'>
-      <nav className='superiorNav'>
-        <img className='logo-logout' src={require('../../../images/logout.png')} alt='Logout' />
-        <button className='logout-button'>Logout</button>
-        <img className='logo-admin-layout' src={require('../../../images/queen.png')} alt='Logo' />
-      </nav>
+      <NavBar />
       <main className='table'>
         <section className='options-table'>
-          <button className='add-user-button' type='submit' onClick={() => x()}>Add new user</button>
-          <button className='add-product-button' type='submit' onClick={() => x()}>Add new product</button>
+        <Button
+            name='Add new user'
+            secondclass='left' />
+          <Button
+            name='Add new product' 
+            secondclass='right'/>
           <div className='lineOne' />
         </section>
         <div className='add-container'>
@@ -22,7 +26,9 @@ function Admin({user}) {
             <input className='user-name-input' type='text'></input>
             <label className='label-credencial-name'>User credencial:</label>
             <input className='user-credencial-input' type={'email'}></input>
-            <button className='create-user-button' type='submit' onClick={() => x()}>Create user</button>
+            <SendButton 
+            name='Create user'
+            secondclass='admin' />
         </div>
         <img className='logo-person' src={require('../../../images/person-pin.png')} alt='Person icon' />
         <p className='admin-name'>{user}</p>

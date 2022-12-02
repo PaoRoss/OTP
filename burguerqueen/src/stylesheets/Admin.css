@@ -227,7 +227,7 @@
     outline: none;
 }
 
-.create-user-button {
+/*.create-user-button {
     box-sizing: border-box;
     position: absolute;
     width: 472px;
@@ -245,7 +245,7 @@
     line-height: 25px;
     text-align: center;
     color: #F3EDE2;
-}
+}*/
 
 .user-description {
     position: absolute;
