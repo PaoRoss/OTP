@@ -10,21 +10,21 @@ import { routerAuth } from './components/auth/routerAuth';
 
 function App() {
   const [user, setUser] = useState(null);
-  const [rol, setRol] = useState(null);
+  const [role, setRole] = useState(null);
   // user:¨
   // {email, rol}
   // use efect setUser  'kini@perrito.net'
-  const changeUser = (userEmail, rol) => {
+  const changeUser = (userEmail, role) => {
     //aqui la logica de la funcion
     console.log(userEmail);
     setUser(userEmail);
-    setRol(rol)
-    console.log(rol)
+    setRole(role)
+    console.log(role)
   };
   //useEffect(() =>{},[])
   return (
     <>
-      {user ? <RouterProvider router={routerAuth(user)}   /> : <RouterProvider router={routerNoAuth(changeUser)} />}
+      {user ? <RouterProvider router={routerAuth(user,role)}   /> : <RouterProvider router={routerNoAuth(changeUser)} />}
    {/*<RouterProvider router={routerAuth(user)}   />*/}   
    </>
   );
