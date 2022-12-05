@@ -60,12 +60,10 @@
 }
 
 
-.breakfast-button {
+.button {
     position: absolute;
     width: 192px;
     height: 47px;
-    left: 24px;
-    top: 135px;
     background: #3D3838;
     border-radius: 10px;
     border: none;
@@ -74,29 +72,16 @@
     font-size: 20px;
     color: #F3EDE2;
 }
-
-.breakfast-button:hover {
-    background-color: #F3EDE2;
-    color: #3D3838;
-    cursor: pointer;
-}
-
-.lunch-dinner-button {
-    position: absolute;
-    width: 192px;
-    height: 47px;
+.button.right{
     left: 240px;
     top: 135px;
-    background: #3D3838;
-    border-radius: 10px;
-    border: none;
-    font-family: 'Quicksand';
-    font-weight: 600;
-    font-size: 20px;
-    color: #F3EDE2;
+}
+.button.left{
+    left: 24px;
+    top: 135px;
 }
 
-.lunch-dinner-button:hover {
+.button:hover {
     background-color: #F3EDE2;
     color: #3D3838;
     cursor: pointer;
@@ -117,6 +102,7 @@
     left: 24px;
     top: 753px;
 }
+
 .waiter-name {
     display: flex;
     position: absolute;
@@ -126,7 +112,6 @@
     top: 758px;
     color: #F3EDE2;
 }
-
 
 .order-sumary-container {
     display: flex;
@@ -220,11 +205,10 @@ label {
     color: #F3EDE2;
 }
 
-.send-to-kitchen-button {
+.send-button {
     position: absolute;
     width: 472px;
     height: 47px;
-    top: 500px;
     background: #3D3838;
     border: 2px solid #F3EDE2;
     border-radius: 10px;
@@ -235,5 +219,12 @@ label {
     /* identical to box height */
     text-align: center;
     color: #F3EDE2;
+}
+.send-button.orders{
+    top: 500px;
     margin-left: 12px;
+}
+.send-button.admin{
+    top:643px;
+    left:99px;
 }
