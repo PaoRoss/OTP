@@ -39,13 +39,12 @@ function Menu({ user }) {
       console.log('dinner')
     }
   }
-function productList() {
+/*function productList() {
    const listItems = breakfast.map((item) =>
     <ProductCard key={item.id.toString()} id={item.id} name={item.name} price={item.price} />
   )
   console.log(listItems)
-}
-
+}*/
 
   // crear una funcion que cambie la opcionfoot para comida o desayuno
   // renderizado condicional optionFood == breakfast 
