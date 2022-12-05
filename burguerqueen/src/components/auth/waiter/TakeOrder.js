@@ -1,42 +1,75 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ProductCard from './ProductCard';
 import OrderDetails from './OrderDetails';
 import '../../../stylesheets/TakeOrder.css';
 import NavBar from '../../generalComponents/NavBar';
 import Button from '../../generalComponents/Button';
 import SendButton from '../../generalComponents/SendButton';
+import axios from 'axios';
 
 function Menu({ user }) {
+  const [breakfast, setBreakfast] = useState(null)
+  const [dinner, setDinner] = useState(null)
+
+  useEffect(()=>{
+    getMenuBreakfast()
+    getMenuDinner()
+  },[])
+
+  const  getMenuBreakfast = async() => {
+    let request = await axios.get('https://6376d05f81a568fc25067c85.mockapi.io/api/bq6/products?type=breakfast')
+    setBreakfast(request)
+  }
+  const  getMenuDinner = async() => {
+    let request = await axios.get('https://6376d05f81a568fc25067c85.mockapi.io/api/bq6/products?type=lunch')
+    setDinner(request)
+  }
+  
+  const [optionFood, setOptionFood] = useState('breakfast')
+
+  function changeMenu(e) {
+    // obtener que boton se esta clickeando
+    // cambiar el estado de opcionFood, dependiendo del boton clickeado
+    if(e.target.value === 'breakfast'){
+      setOptionFood('breakfast')
+      console.log('breakfast')
+    }
+    if(e.target.value === 'dinner'){
+      setOptionFood('dinner')
+      console.log('dinner')
+    }
+  }
+function productList() {
+   const listItems = breakfast.map((item) =>
+    <ProductCard key={item.id.toString()} id={item.id} name={item.name} price={item.price} />
+  )
+  console.log(listItems)
+}
+
+
+  // crear una funcion que cambie la opcionfoot para comida o desayuno
+  // renderizado condicional optionFood == breakfast 
+
+  // .map 
   return (
     <div className='menuContainer'>
       <NavBar />
       <main className='menu'>
         <section className='options-menu'>
           <Button
+           filter = {changeMenu}
+           value = 'breakfast'
             name='Breakfast'
             secondclass='left' />
           <Button 
+            filter = {changeMenu}
+            value = 'dinner'
             name='Lunch & Dinner'
             secondclass='right' />
           <div className='lineOne' />
         </section>
         <div className='product-card-container'>
-          <ProductCard 
-            id='1'
-            name='American Coffe'
-            price='$10.00' />
-          <ProductCard
-            id='2'
-            name='Coffe with Milk'
-            price='$07.00' />
-          <ProductCard
-            id='3'
-            name='Ham & cheese sandwich'
-            price='$10.00' />
-          <ProductCard
-            id='4'
-            name='Natural juice'
-            price='$07.00' />
+          {optionFood === 'breakfast' ?  {productList} : <ProductCard name='dinner' /> }
         </div>
         <img className='logo-person' src={require('../../../images/person-pin.png')} alt='Person icon' />
         <p className='waiter-name'>{user}</p>

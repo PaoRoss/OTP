@@ -23,19 +23,12 @@ function Admin({user}) {
         <div className='add-container'>
             <h3 className='instructions-to-add'> Add the information required </h3>
             <label className='label-user-name'>User name:</label>
-<<<<<<< HEAD
-            <input className='user-name-input' type='text' placeholder='Email'></input>
-            <label className='label-credencial-name' >User credencial:</label>
-            <input className='user-credencial-input' placeholder='User name' type={'email'}></input>
-            <button className='create-user-button' type='submit' onClick={() => x()}>Create user</button>
-=======
             <input className='user-name-input' type='text'></input>
             <label className='label-credencial-name'>User credencial:</label>
             <input className='user-credencial-input' type={'email'}></input>
             <SendButton 
             name='Create user'
             secondclass='admin' />
->>>>>>> 174e5d7581dfd538a96251c8107330fbf0011213
         </div>
         <img className='logo-person' src={require('../../../images/person-pin.png')} alt='Person icon' />
         <p className='admin-name'>{user}</p>
