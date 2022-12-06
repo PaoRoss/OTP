@@ -8,8 +8,8 @@ import SendButton from '../../generalComponents/SendButton';
 import axios from 'axios';
 
 function Menu({ user }) {
-  const [breakfast, setBreakfast] = useState(null)
-  const [dinner, setDinner] = useState(null)
+  const [breakfast, setBreakfast] = useState([])
+  const [dinner, setDinner] = useState([])
 
   useEffect(()=>{
     getMenuBreakfast()
@@ -72,7 +72,7 @@ console.log(productList())
         </section>
         <div className='product-card-container'>
         <>
-          {optionFood === 'breakfast' ? productList : <ProductCard name='breakfast' /> }
+          {optionFood === 'breakfast' ? productList() : <ProductCard name='breakfast' /> }
         </>
         </div>
         <img className='logo-person' src={require('../../../images/person-pin.png')} alt='Person icon' />

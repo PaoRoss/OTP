@@ -6,7 +6,7 @@ function ProductCard(props) {
         <div className='product-card'>
            <p className='product-id'> {props.id} </p>
            <p className='product-name'>{props.name}</p>
-           <p className='product-price'>{props.price}</p>
+           <p className='product-price'>$ {props.price}.00</p>
         </div>
     )
 }
