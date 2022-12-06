@@ -72,7 +72,7 @@
     font-size: 20px;
     color: #F3EDE2;
 }
-.button.right{
+.button.center{
     left: 240px;
     top: 135px;
 }
@@ -223,8 +223,4 @@ label {
 .send-button.orders{
     top: 500px;
     margin-left: 12px;
-}
-.send-button.admin{
-    top:643px;
-    left:99px;
 }

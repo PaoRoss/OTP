@@ -4,38 +4,6 @@
     height: 834px;
 }
 
-.superiorNav {
-    display: flex;
-    flex-direction: row;
-    border-bottom: 1px solid #9D9999;
-    width: 1194px;
-    height: 106px;
-    position: absolute;
-}
-
-.logout-button {
-    display: flex;
-    width: 83px;
-    height: 30px;
-    margin: 44px 63px;
-    font-family: 'Quicksand';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 30px;
-    border: none;
-    color: #F3EDE2;
-    background-color: #101315;
-}
-
-.logo-admin-layout {
-    position: absolute;
-    width: 81.67px;
-    height: 65px;
-    left: 1087px;
-    top: 27px;
-}
-
 .add-container {
     display: flex;
     flex-wrap: wrap;
@@ -149,18 +117,13 @@
 }
 
 .instructions-to-add {
-
     position: absolute;
-    text-align: left;
-    width: 350px;
     height: 30px;
     left: 24px;
     top: 236px;
     font-family: 'Quicksand';
-    font-style: normal;
     font-weight: 700;
     font-size: 24px;
-    line-height: 30px;
     text-align: center;
     color: #F3EDE2;
 }
@@ -226,28 +189,43 @@
     padding-left: 24px;
     outline: none;
 }
-
-/*.create-user-button {
-    box-sizing: border-box;
-    position: absolute;
-    width: 472px;
-    height: 47px;
-    left: 99px;
-    top: 643px;
-    background: #3D3838;
-    border: 2px solid #F3EDE2;
-    border-radius: 10px;
-    position: absolute;
-    font-family: 'Quicksand';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 25px;
-    text-align: center;
+.select-role{
+    position:absolute;
     color: #F3EDE2;
-}*/
+    font-family: 'Quicksand';
+    font-size: 20px;
+    left: 24px;
+    top: 433px;
+}
 
-.user-description {
+.button.options-left{
+    left: 24px;
+    top: 479px
+}
+.button.options-left:hover{
+    background-color: #E89A40;
+    color: #3D3838;
+}
+
+.button.options-center{
+    left: 240px;
+    top: 479px
+}
+.button.options-center:hover{
+    background-color: #E89A40;
+    color: #3D3838;
+}
+
+.button.options-right {
+    left: 455px;
+    top: 479px
+}
+.button.options-right:hover{
+    background-color: #E89A40;
+    color: #3D3838;
+}
+
+.current-users {
     position: absolute;
     width: 550px;
     height: 28px;
@@ -267,4 +245,13 @@ th {
 
 .table-user {
     padding: 0 90px;
+}
+.send-button.admin{
+    top:643px;
+    left:99px;
+}
+.send-button.admin:hover {
+    background-color: #F3EDE2;
+    color: #3D3838;
+    cursor: pointer;
 }

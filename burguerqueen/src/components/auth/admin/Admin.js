@@ -17,7 +17,7 @@ function Admin({user}) {
             secondclass='left' />
           <Button
             name='Add new product' 
-            secondclass='right'/>
+            secondclass='center'/>
           <div className='lineOne' />
         </section>
         <div className='add-container'>
@@ -26,6 +26,16 @@ function Admin({user}) {
             <input className='user-name-input' type='text'></input>
             <label className='label-credencial-name'>User credencial:</label>
             <input className='user-credencial-input' type={'email'}></input>
+            <p className='select-role'>Select role:</p>
+            <Button
+            name='Admin'
+            secondclass='options-left' />
+            <Button
+            name='Waiter'
+            secondclass='options-center' />
+            <Button
+            name='Kitchen'
+            secondclass='options-right' />
             <SendButton 
             name='Create user'
             secondclass='admin' />
@@ -37,7 +47,7 @@ function Admin({user}) {
         <div className='input-customer-name'>
           <h3 className='current-user-text'>Current users</h3>
         </div>
-        <div className='user-description'>
+        <div className='current-users'>
           <table>
             <tr>
               <th>ID </th>

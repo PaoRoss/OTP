@@ -18,11 +18,11 @@ function Menu({ user }) {
 
   const  getMenuBreakfast = async() => {
     let request = await axios.get('https://6376d05f81a568fc25067c85.mockapi.io/api/bq6/products?type=breakfast')
-    setBreakfast(request)
+    setBreakfast(request.data)
   }
   const  getMenuDinner = async() => {
     let request = await axios.get('https://6376d05f81a568fc25067c85.mockapi.io/api/bq6/products?type=lunch')
-    setDinner(request)
+    setDinner(request.data)
   }
   
   const [optionFood, setOptionFood] = useState('breakfast')
@@ -32,19 +32,22 @@ function Menu({ user }) {
     // cambiar el estado de opcionFood, dependiendo del boton clickeado
     if(e.target.value === 'breakfast'){
       setOptionFood('breakfast')
-      console.log('breakfast')
+      console.log(breakfast)
     }
     if(e.target.value === 'dinner'){
       setOptionFood('dinner')
-      console.log('dinner')
+      console.log(dinner)
     }
   }
-/*function productList() {
-   const listItems = breakfast.map((item) =>
-    <ProductCard key={item.id.toString()} id={item.id} name={item.name} price={item.price} />
-  )
-  console.log(listItems)
-}*/
+function productList() {
+  console.log(breakfast)
+return breakfast.map((item)=> {
+        return (
+          <ProductCard key={item.id.toString()} id={item.id} name={item.name} price={item.price}/>
+          )
+       })
+}
+console.log(productList())
 
   // crear una funcion que cambie la opcionfoot para comida o desayuno
   // renderizado condicional optionFood == breakfast 
@@ -64,11 +67,13 @@ function Menu({ user }) {
             filter = {changeMenu}
             value = 'dinner'
             name='Lunch & Dinner'
-            secondclass='right' />
+            secondclass='center' />
           <div className='lineOne' />
         </section>
         <div className='product-card-container'>
-          {optionFood === 'breakfast' ?  {productList} : <ProductCard name='dinner' /> }
+        <>
+          {optionFood === 'breakfast' ? productList : <ProductCard name='breakfast' /> }
+        </>
         </div>
         <img className='logo-person' src={require('../../../images/person-pin.png')} alt='Person icon' />
         <p className='waiter-name'>{user}</p>
