@@ -18,10 +18,7 @@ function Login(props) {
   }
 
   const handleLogin = () => {
-    //console.log(e.target.value);
-    // const userValue = document.getElementById('username').value;
-    // console.log(userValue);
-    // changeUser();
+
     const email = getUser();
     const x = email.then(response => response.map(e => {
       return{userName: e.email, userPassword: e.password, isAdmin: e.roles[0].admin, isWaiter: e.roles[0].waiter}
@@ -32,7 +29,6 @@ function Login(props) {
       const userInfo = response.find(element =>  element.userName === user);
       console.log(userInfo)
       props.changeUser(userInfo.userName, userInfo.isAdmin);
-      //props.changeUser(user);
     }else{
       setErrorMessage(true);
       console.log('Tu ni siquiera trabajas aquí')
