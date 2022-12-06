@@ -8,6 +8,9 @@ import SendButton from '../../generalComponents/SendButton';
 import axios from 'axios';
 
 function Menu({ user }) {
+
+  //al renderizar el componente se obtiene la data del menú de la API 
+  // y se le asigna el valor a la variable del Hook
   const [breakfast, setBreakfast] = useState([])
   const [dinner, setDinner] = useState([])
 
@@ -25,11 +28,10 @@ function Menu({ user }) {
     setDinner(request.data)
   }
   
+  //Se cambia el estado de ptionFood al apretar el boton para el renderizado condicional
   const [optionFood, setOptionFood] = useState('breakfast')
 
   function changeMenu(e) {
-    // obtener que boton se esta clickeando
-    // cambiar el estado de opcionFood, dependiendo del boton clickeado
     if(e.target.value === 'breakfast'){
       setOptionFood('breakfast')
       console.log(breakfast)
@@ -39,20 +41,26 @@ function Menu({ user }) {
       console.log(dinner)
     }
   }
-function productList() {
-  console.log(breakfast)
-return breakfast.map((item)=> {
-        return (
-          <ProductCard key={item.id.toString()} id={item.id} name={item.name} price={item.price}/>
-          )
-       })
-}
-console.log(productList())
+  //Funciones que renderizan/muestra un componente por cada elemento del menu de la API
+  function productListBreakfast() {
+    return breakfast.map((item)=> {
+          return (
+            <ProductCard key={item.id.toString()} id={item.id} name={item.name} price={item.price}/>
+            )
+        })
+  }
 
-  // crear una funcion que cambie la opcionfoot para comida o desayuno
-  // renderizado condicional optionFood == breakfast 
+  function productListDinner() {
+    return dinner.map((item)=> {
+          return (
+            <ProductCard key={item.id.toString()} id={item.id} name={item.name} price={item.price}/>
+            )
+        })
+  }
 
-  // .map 
+
+  const [order, setOrder] = useState([])
+
   return (
     <div className='menuContainer'>
       <NavBar />
@@ -72,7 +80,7 @@ console.log(productList())
         </section>
         <div className='product-card-container'>
         <>
-          {optionFood === 'breakfast' ? productList() : <ProductCard name='breakfast' /> }
+          {optionFood === 'breakfast' ? productListBreakfast() : productListDinner() }
         </>
         </div>
         <img className='logo-person' src={require('../../../images/person-pin.png')} alt='Person icon' />
