@@ -8,6 +8,7 @@ import SendButton from '../../generalComponents/SendButton';
 import axios from 'axios';
 
 function Menu({ user }) {
+
   //al renderizar el componente se obtiene la data del menú de la API 
   // y se le asigna el valor a la variable del Hook
   const [breakfast, setBreakfast] = useState([])
