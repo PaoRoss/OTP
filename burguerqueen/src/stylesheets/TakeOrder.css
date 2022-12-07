@@ -169,10 +169,12 @@ label {
 
 .order-description {
     position: absolute;
+    height: 400px;
     width: 522px;
     top: 236px;
     color: #F3EDE2;
-    margin: 0px 24px 0px 14px;
+    /*margin: 0px 24px 0px 14px;*/
+    overflow-y: scroll;
 }
 
 .style-name-column {
@@ -185,7 +187,7 @@ label {
 
 .price {
     position: absolute;
-    top: 400px;
+    top: 670px;
     font-family: 'Be Vietnam Pro';
     font-weight: 400;
     font-size: 24px;
@@ -196,13 +198,12 @@ label {
 .number-price {
     position: absolute;
     width: 95px;
-    left: 380px;
-    top: 400px;
+    top: 670px;
     font-family: 'Be Vietnam Pro';
     font-weight: 400;
     font-size: 24px;
-    text-align: center;
     color: #F3EDE2;
+    right: 120px;
 }
 
 .send-button {
@@ -215,10 +216,16 @@ label {
     font-family: 'Quicksand';
     font-weight: 600;
     font-size: 20px;
-    line-height: 25px;
     /* identical to box height */
     text-align: center;
     color: #F3EDE2;
+    margin-top: 240px;
+}
+
+.send-button:hover {
+    background-color: #F3EDE2;
+    color: #3D3838;
+    cursor: pointer;
 }
 .send-button.orders{
     top: 500px;

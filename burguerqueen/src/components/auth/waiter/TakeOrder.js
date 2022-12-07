@@ -100,6 +100,7 @@ function Menu({ user }) {
           <label>Customer's Name </label>
           <input className='customer-name-input' type='text'></input>
         </div>
+        <div className='order-container'>
         <div className='order-description'>
           <table>
             <thead>
@@ -114,6 +115,7 @@ function Menu({ user }) {
             {order != [] ? showOrderItems() : console.log('no hay nada') }
             </>
           </table>
+          </div>
           <p className='price'> Total price</p>
           <p className='number-price'>$ 20.00</p>
           <SendButton 
