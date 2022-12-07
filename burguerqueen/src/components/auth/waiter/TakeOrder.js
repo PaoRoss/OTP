@@ -49,7 +49,7 @@ function Menu({ user }) {
     const updatedOrder = [{ product: item, qty: 1 }, ...order];
     setOrder(updatedOrder)
   }else{
-    setOrder(order.map(element => element.product.id === item.id?{...element, qty:element.qty+1}:element))
+    setOrder(order.map(element => element.product.id === item.id?{...element, qty:element.qty + 1}:element))
   }
 }
   console.log(order);
