@@ -2,11 +2,11 @@ import "../../../stylesheets/ProductCard.css";
 import React from "react";
 
 function ProductCard({ item, addItem }) {
-  function showInfo() {
+  function addProduct() {
     addItem(item);
   }
   return (
-    <div className="product-card" onClick={showInfo}>
+    <div className="product-card" onClick={addProduct}>
       <p className="product-id"> {item.id} </p>
       <p className="product-name">{item.name}</p>
       <p className="product-price">$ {item.price}.00</p>
