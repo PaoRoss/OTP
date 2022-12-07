@@ -247,8 +247,8 @@ th {
     padding: 0 90px;
 }
 .send-button.admin{
-    top:643px;
-    left:99px;
+    top: 600px;
+    left: 99px;
 }
 .send-button.admin:hover {
     background-color: #F3EDE2;

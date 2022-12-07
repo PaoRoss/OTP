@@ -85,6 +85,7 @@
     background-color: #F3EDE2;
     color: #3D3838;
     cursor: pointer;
+    border: 2px solid #101315;
 }
 
 .lineOne {
@@ -173,7 +174,7 @@ label {
     width: 522px;
     top: 236px;
     color: #F3EDE2;
-    /*margin: 0px 24px 0px 14px;*/
+    margin: 0px 24px 0px 14px;
     overflow-y: scroll;
 }
 
@@ -192,7 +193,7 @@ label {
     font-weight: 400;
     font-size: 24px;
     color: #F3EDE2;
-    margin-left: 10px;
+    margin-left: 24px;
 }
 
 .number-price {
@@ -203,7 +204,7 @@ label {
     font-weight: 400;
     font-size: 24px;
     color: #F3EDE2;
-    right: 120px;
+    margin-left: 405px;
 }
 
 .send-button {
@@ -219,7 +220,6 @@ label {
     /* identical to box height */
     text-align: center;
     color: #F3EDE2;
-    margin-top: 240px;
 }
 
 .send-button:hover {
@@ -228,6 +228,6 @@ label {
     cursor: pointer;
 }
 .send-button.orders{
-    top: 500px;
-    margin-left: 12px;
+    top: 745px;
+    margin-left: 24px;
 }
