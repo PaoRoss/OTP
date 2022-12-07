@@ -6,7 +6,7 @@ function OrderDetails(props){
                 <tr>
                 <td>{props.qty}</td>
                 <td>{props.name}</td>
-                <td>{props.price}</td>
+                <td>{props.price}.00</td>
                 <td><img className='deleteIcon' src={require('../../../images/delete.png')} /></td>
                 </tr>
          </tbody>    

@@ -8,6 +8,10 @@
     border-radius: 10px;
 }
 
+.product-card:hover {
+    cursor: pointer;
+}
+
 .product-id {
     position: absolute;
     width: 20px;
