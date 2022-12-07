@@ -102,7 +102,9 @@ function Menu({ user }) {
       );
     });
   }
-
+const total = () => {
+  return order.reduce((acc, item) => acc + item.qty * item.product.price, 0);
+}
   return (
     <div className="menuContainer">
       <NavBar />
@@ -156,8 +158,8 @@ function Menu({ user }) {
               <>{order != [] ? showOrderItems() : console.log("no hay nada")}</>
             </table>
           </div>
-          <p className="price"> Total price</p>
-          <p className="number-price">$ 20.00</p>
+          <p className="price"> Total price </p>
+          <p className="number-price">$ {total()}.00</p>
           <SendButton name="Send to kitchen" secondclass="orders" />
         </div>
       </section>
