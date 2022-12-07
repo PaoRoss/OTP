@@ -40,11 +40,14 @@ function Menu({ user }) {
       console.log(dinner)
     }
   }
+
   //Funciones que renderizan/muestra un componente por cada elemento del menu de la API
+  const [order, setOrder] = useState([])
+    console.log(order);
   function productListBreakfast() {
     return breakfast.map((item)=> {
           return (
-            <ProductCard key={item.id.toString()} id={item.id} name={item.name} price={item.price}/>
+            <ProductCard key={item.id.toString()} id={item.id} name={item.name} price={item.price} addItem={setOrder} info={item} state={order}/>
             )
         })
   }
@@ -52,13 +55,18 @@ function Menu({ user }) {
   function productListDinner() {
     return dinner.map((item)=> {
           return (
-            <ProductCard key={item.id.toString()} id={item.id} name={item.name} price={item.price}/>
+            <ProductCard key={item.id.toString()} id={item.id} name={item.name} price={item.price} addItem={setOrder} info={item} state={order} />
             )
         })
   }
 
-
-  const [order, setOrder] = useState([])
+  function showOrderItems(){
+    return order.map((item)=> {
+      return (
+        <OrderDetails qty={"1"} name={item.name} price={item.price} />
+      )
+    })
+  }
 
   return (
     <div className='menuContainer'>
@@ -101,10 +109,9 @@ function Menu({ user }) {
                 <th className='style-delete-column'> Delete </th>
               </tr>
             </thead>
-            <OrderDetails
-              qty='2'
-              name='Simple Hamburger'
-              price='20.00' />
+            <>
+            {order != [] ? showOrderItems() : console.log('no hay nada') }
+            </>
           </table>
           <p className='price'> Total price</p>
           <p className='number-price'>$ 20.00</p>

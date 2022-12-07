@@ -2,14 +2,14 @@ import '../../../stylesheets/OrderDetails.css';
 
 function OrderDetails(props){
     return(
-            <tbody>
+        <tbody>
                 <tr>
                 <td>{props.qty}</td>
                 <td>{props.name}</td>
                 <td>{props.price}</td>
                 <td><img className='deleteIcon' src={require('../../../images/delete.png')} /></td>
                 </tr>
-            </tbody>
+         </tbody>    
     )
 }
 
