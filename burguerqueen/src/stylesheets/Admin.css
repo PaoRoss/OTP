@@ -81,7 +81,7 @@
     height: 40px;
     width: 40px;
     left: 24px;
-    top: 753px;
+    top: 703px;
 }
 
 .admin-name {
@@ -90,7 +90,7 @@
     font-family: 'Be Vietnam Pro';
     font-size: 20px;
     left: 65px;
-    top: 758px;
+    top: 708px;
     color: #F3EDE2;
 }
 
@@ -247,7 +247,7 @@ th {
     padding: 0 90px;
 }
 .send-button.admin{
-    top:643px;
+    top:350px;
     left:99px;
 }
 .send-button.admin:hover {

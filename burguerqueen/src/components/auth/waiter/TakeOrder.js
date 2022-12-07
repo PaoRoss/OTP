@@ -43,30 +43,46 @@ function Menu({ user }) {
   }
 
   //Funciones que renderizan/muestra un componente por cada elemento del menu de la API
-  const [order, setOrder] = useState([])
-    console.log(order);
+  const [order, setOrder] = useState([]);
+  function addItem(item){
+    if(!order.find(element => element.product.id === item.id)){
+    const updatedOrder = [{ product: item, qty: 1 }, ...order];
+    setOrder(updatedOrder)
+  }else{
+    setOrder(order.map(element => element.product.id === item.id?{...element, qty:element.qty+1}:element))
+  }
+}
+  console.log(order);
   function productListBreakfast() {
-    return breakfast.map((item)=> {
-          return (
-            <ProductCard key={item.id.toString()} id={item.id} name={item.name} price={item.price} addItem={setOrder} info={item} state={order}/>
-            )
-        })
+    return breakfast.map((item) => {
+      return (
+        <ProductCard
+          key={item.id.toString()}
+          addItem={addItem}
+          item={item}
+          state={order}
+        />
+      );
+    });
   }
 
   function productListDinner() {
-    return dinner.map((item)=> {
-          return (
-            <ProductCard key={item.id.toString()} id={item.id} name={item.name} price={item.price} addItem={setOrder} info={item} state={order} />
-            )
-        })
+    return dinner.map((item) => {
+      return (
+        <ProductCard
+          key={item.id.toString()}
+          addItem={addItem}
+          item={item}
+          state={order}
+        />
+      );
+    });
   }
 
-  function showOrderItems(){
-    return order.map((item)=> {
-      return (
-        <OrderDetails qty={"1"} name={item.name} price={item.price} />
-      )
-    })
+  function showOrderItems() {
+    return order.map((item) => {
+      return <OrderDetails qty={item.qty} name={item.product.name} price={item.product.price} />;
+    });
   }
 
   return (
@@ -100,7 +116,6 @@ function Menu({ user }) {
           <label>Customer's Name </label>
           <input className='customer-name-input' type='text'></input>
         </div>
-        <div className='order-container'>
         <div className='order-description'>
           <table>
             <thead>
@@ -115,7 +130,6 @@ function Menu({ user }) {
             {order != [] ? showOrderItems() : console.log('no hay nada') }
             </>
           </table>
-          </div>
           <p className='price'> Total price</p>
           <p className='number-price'>$ 20.00</p>
           <SendButton 
