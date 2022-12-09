@@ -3,20 +3,20 @@ import { createBrowserRouter } from "react-router-dom";
 import Menu from "./waiter/TakeOrder";
 import Admin from "./admin/Admin";
 
-export const routerAuth = (user, role) => {
+export const routerAuth = (user, role, changeUser) => {
   console.log(user);
   if (role === false) {
     return createBrowserRouter([
       {
         path: "/",
-        element: <Menu user={user} />,
+        element: <Menu user={user} changeUser={changeUser} />,
       },
     ]);
   } else {
     return createBrowserRouter([
       {
         path: "/",
-        element: <Admin user={user} />,
+        element: <Admin user={user} changeUser={changeUser} />,
       },
     ]);
   }

@@ -7,7 +7,7 @@ import Button from "../../generalComponents/Button";
 import SendButton from "../../generalComponents/SendButton";
 import axios from "axios";
 
-function Menu({ user }) {
+function Menu({ user, changeUser}) {
   //al renderizar el componente se obtiene la data del menú de la API
   // y se le asigna el valor a la variable del Hook
   const [breakfast, setBreakfast] = useState([]);
@@ -51,7 +51,7 @@ function Menu({ user }) {
 
   function addItem(item) {
     if (!order.find((element) => element.product.id === item.id)) {
-      const updatedOrder = [{ product: item, qty: 1 }, ...order];
+      const updatedOrder = [...order, { product: item, qty: 1 }];
       setOrder(updatedOrder);
     } else {
       setOrder(
@@ -63,6 +63,18 @@ function Menu({ user }) {
       );
     }
   }
+  function removeItem(item) {
+    order.find((element) => element.product.id === item.product.id)
+      setOrder(
+        order.map((element) =>
+          element.product.id === item.product.id  ? { ...element, qty: element.qty - 1 }: element
+        )
+      );
+  }
+function deleteItem(item){
+ const filterItem= order.filter((element) => element.product.id !== item.product.id)
+ setOrder(filterItem)
+}
   console.log(order);
   function productListBreakfast() {
     return breakfast.map((item) => {
@@ -96,8 +108,11 @@ function Menu({ user }) {
         <OrderDetails
           key={item.product.id.toString()}
           qty={item.qty}
+          item={item}
           name={item.product.name}
           price={item.product.price}
+          removeItem={removeItem}
+          deleteItem={deleteItem}
         />
       );
     });
@@ -107,7 +122,8 @@ const total = () => {
 }
   return (
     <div className="menuContainer">
-      <NavBar />
+      <NavBar 
+      changeUser={changeUser}/>
       <main className="menu">
         <section className="options-menu">
           <Button

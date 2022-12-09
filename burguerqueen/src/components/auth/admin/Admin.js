@@ -6,10 +6,11 @@ import SendButton from '../../generalComponents/SendButton';
 import '../../../stylesheets/TakeOrder.css'
 
 
-function Admin({user}) {
+function Admin({user, changeUser}) {
   return (
     <div className='adminContainer'>
-      <NavBar />
+      <NavBar 
+      changeUser={changeUser}/>
       <main className='table'>
         <section className='options-table'>
         <Button
