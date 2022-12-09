@@ -1,15 +1,19 @@
 import React from "react";
 import "../../../src/stylesheets/TakeOrder.css";
 
-function NavBar() {
+function NavBar({changeUser}) {
+  function logOut(){
+    changeUser('' , '')
+  }
   return (
     <nav className="superiorNav">
       <img
         className="logo-logout"
         src={require("../../../src/images/logout.png")}
         alt="Logout"
+        onClick={logOut}
       />
-      <button className="logout-button">Logout</button>
+      <button className="logout-button" onClick={logOut}>Logout</button>
       <img
         className="logo-waiter-layout"
         src={require("../../../src/images/queen.png")}

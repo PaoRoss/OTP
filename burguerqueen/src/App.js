@@ -24,7 +24,7 @@ function App() {
   //useEffect(() =>{},[])
   return (
     <>
-      {user ? <RouterProvider router={routerAuth(user, role)}   /> : <RouterProvider router={routerNoAuth(changeUser)} />}
+      {user ? <RouterProvider router={routerAuth(user, role, changeUser)}   /> : <RouterProvider router={routerNoAuth(changeUser)} />}
    </>
   );
 }
