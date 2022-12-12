@@ -7,7 +7,7 @@ import Button from "../../generalComponents/Button";
 import SendButton from "../../generalComponents/SendButton";
 import axios from "axios";
 
-function Menu({ user, changeUser}) {
+function Menu({ user, changeUser }) {
   //al renderizar el componente se obtiene la data del menú de la API
   // y se le asigna el valor a la variable del Hook
   const [breakfast, setBreakfast] = useState([]);
@@ -31,7 +31,7 @@ function Menu({ user, changeUser}) {
     setDinner(request.data);
   };
 
-  //Se cambia el estado de ptionFood al apretar el boton para el renderizado condicional
+  //Se cambia el estado de optionFood al apretar el boton para el renderizado condicional
   const [optionFood, setOptionFood] = useState("breakfast");
 
   function changeMenu(e) {
@@ -64,17 +64,21 @@ function Menu({ user, changeUser}) {
     }
   }
   function removeItem(item) {
-    order.find((element) => element.product.id === item.product.id)
-      setOrder(
-        order.map((element) =>
-          element.product.id === item.product.id  ? { ...element, qty: element.qty - 1 }: element
-        )
-      );
+    order.find((element) => element.product.id === item.product.id);
+    setOrder(
+      order.map((element) =>
+        element.product.id === item.product.id
+          ? { ...element, qty: element.qty - 1 }
+          : element
+      )
+    );
   }
-function deleteItem(item){
- const filterItem= order.filter((element) => element.product.id !== item.product.id)
- setOrder(filterItem)
-}
+  function deleteItem(item) {
+    const filterItem = order.filter(
+      (element) => element.product.id !== item.product.id
+    );
+    setOrder(filterItem);
+  }
   console.log(order);
   function productListBreakfast() {
     return breakfast.map((item) => {
@@ -117,13 +121,31 @@ function deleteItem(item){
       );
     });
   }
-const total = () => {
-  return order.reduce((acc, item) => acc + item.qty * item.product.price, 0);
-}
+
+  const [clientName, setClientName] = useState("");
+  const [date, setDate] = useState("");
+  const [totalAmount, setTotalAmount] = useState(0);
+
+  const total = () => {
+    return order.reduce((acc, item) => acc + item.qty * item.product.price, 0);
+  };
+
+  const handleChange = (e) => {
+    e.preventDefault();
+    setClientName(e.target.value);
+    //console.log(e.target.value)
+  };
+
+  const orderInformation = (e) => {
+    console.log(e);
+    setClientName("Vane");
+    setDate("Janeth");
+  };
+
+  console.log(clientName, date, totalAmount);
   return (
     <div className="menuContainer">
-      <NavBar 
-      changeUser={changeUser}/>
+      <NavBar changeUser={changeUser} />
       <main className="menu">
         <section className="options-menu">
           <Button
@@ -176,7 +198,11 @@ const total = () => {
           </div>
           <p className="price"> Total price </p>
           <p className="number-price">$ {total()}.00</p>
-          <SendButton name="Send to kitchen" secondclass="orders" />
+          <SendButton
+            name="Send to kitchen"
+            secondclass="orders"
+            orderInformation={orderInformation}
+          />
         </div>
       </section>
     </div>
