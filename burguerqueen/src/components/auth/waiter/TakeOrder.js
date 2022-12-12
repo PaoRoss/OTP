@@ -180,7 +180,7 @@ function Menu({ user, changeUser }) {
         <h3 className="order-summary-text">Order summary</h3>
         <div className="input-customer-name">
           <label>Customer's Name </label>
-          <input className="customer-name-input" type="text"></input>
+          <input className="customer-name-input" type="text" onChange={handleChange}></input>
         </div>
         <div className="order-container">
           <div className="order-description">
