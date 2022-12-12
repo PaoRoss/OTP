@@ -6,12 +6,15 @@ import NavBar from "../../generalComponents/NavBar";
 import Button from "../../generalComponents/Button";
 import SendButton from "../../generalComponents/SendButton";
 import axios from "axios";
+import { createOrder } from "../../generalComponents/httpRequests";
 
 function Menu({ user, changeUser }) {
   //al renderizar el componente se obtiene la data del menú de la API
   // y se le asigna el valor a la variable del Hook
   const [breakfast, setBreakfast] = useState([]);
   const [dinner, setDinner] = useState([]);
+  const [order, setOrder] = useState([]);
+  const [clientName, setClientName] = useState("");
 
   useEffect(() => {
     getMenuBreakfast();
@@ -47,8 +50,6 @@ function Menu({ user, changeUser }) {
 
   //Funciones que renderizan/muestra un componente por cada elemento del menu de la API
 
-  const [order, setOrder] = useState([]);
-
   function addItem(item) {
     if (!order.find((element) => element.product.id === item.id)) {
       const updatedOrder = [...order, { product: item, qty: 1 }];
@@ -80,51 +81,6 @@ function Menu({ user, changeUser }) {
     setOrder(filterItem);
   }
   console.log(order);
-  function productListBreakfast() {
-    return breakfast.map((item) => {
-      return (
-        <ProductCard
-          key={item.id.toString()}
-          addItem={addItem}
-          item={item}
-          state={order}
-        />
-      );
-    });
-  }
-
-  function productListDinner() {
-    return dinner.map((item) => {
-      return (
-        <ProductCard
-          key={item.id.toString()}
-          addItem={addItem}
-          item={item}
-          state={order}
-        />
-      );
-    });
-  }
-
-  function showOrderItems() {
-    return order.map((item) => {
-      return (
-        <OrderDetails
-          key={item.product.id.toString()}
-          qty={item.qty}
-          item={item}
-          name={item.product.name}
-          price={item.product.price}
-          removeItem={removeItem}
-          deleteItem={deleteItem}
-        />
-      );
-    });
-  }
-
-  const [clientName, setClientName] = useState("");
-  const [date, setDate] = useState("");
-  const [totalAmount, setTotalAmount] = useState(0);
 
   const total = () => {
     return order.reduce((acc, item) => acc + item.qty * item.product.price, 0);
@@ -132,17 +88,32 @@ function Menu({ user, changeUser }) {
 
   const handleChange = (e) => {
     e.preventDefault();
+    console.log(e.target.value);
     setClientName(e.target.value);
-    //console.log(e.target.value)
   };
 
-  const orderInformation = (e) => {
-    console.log(e);
-    setClientName("Vane");
-    setDate("Janeth");
+  const setDefaultValues = () => {
+    setOrder([]);
+    setClientName("");
   };
 
-  console.log(clientName, date, totalAmount);
+  const handleOrderInformation = (e) => {
+   e.preventDefault();
+    const orderInfo = {
+      userId: user,
+      client: clientName,
+      products: order,
+      total: total(),
+      status: "pending",
+      dateEntry: new Date(),
+    };
+
+    const promise = createOrder(orderInfo);
+    promise.then((response) => {
+      setDefaultValues();
+    });
+  };
+
   return (
     <div className="menuContainer">
       <NavBar changeUser={changeUser} />
@@ -165,8 +136,26 @@ function Menu({ user, changeUser }) {
         <div className="product-card-container">
           <>
             {optionFood === "breakfast"
-              ? productListBreakfast()
-              : productListDinner()}
+              ? breakfast.map((item) => {
+                  return (
+                    <ProductCard
+                      key={item.id.toString()}
+                      addItem={addItem}
+                      item={item}
+                      state={order}
+                    />
+                  );
+                })
+              : dinner.map((item) => {
+                  return (
+                    <ProductCard
+                      key={item.id.toString()}
+                      addItem={addItem}
+                      item={item}
+                      state={order}
+                    />
+                  );
+                })}
           </>
         </div>
         <img
@@ -178,32 +167,54 @@ function Menu({ user, changeUser }) {
       </main>
       <section className="order-summary-container">
         <h3 className="order-summary-text">Order summary</h3>
-        <div className="input-customer-name">
-          <label>Customer's Name </label>
-          <input className="customer-name-input" type="text" onChange={handleChange}></input>
-        </div>
-        <div className="order-container">
-          <div className="order-description">
-            <table>
-              <thead>
-                <tr>
-                  <th> QTY </th>
-                  <th className="style-name-column"> Name </th>
-                  <th> Price </th>
-                  <th className="style-delete-column"> Delete </th>
-                </tr>
-              </thead>
-              <>{order != [] ? showOrderItems() : console.log("no hay nada")}</>
-            </table>
+       <form onSubmit={handleOrderInformation}>
+          <div className="input-customer-name">
+            <label>Customer's Name </label>
+            <input
+              className="customer-name-input"
+              type="text"
+              onChange={handleChange}
+              value={clientName}
+            ></input>
           </div>
-          <p className="price"> Total price </p>
-          <p className="number-price">$ {total()}.00</p>
-          <SendButton
-            name="Send to kitchen"
-            secondclass="orders"
-            orderInformation={orderInformation}
-          />
-        </div>
+          <div className="order-container">
+            <div className="order-description">
+              <table>
+                <thead>
+                  <tr>
+                    <th> QTY </th>
+                    <th className="style-name-column"> Name </th>
+                    <th> Price </th>
+                    <th className="style-delete-column"> Delete </th>
+                  </tr>
+                </thead>
+                <>
+                  {order != []
+                    ? order.map((item) => {
+                        return (
+                          <OrderDetails
+                            key={item.product.id.toString()}
+                            qty={item.qty}
+                            item={item}
+                            name={item.product.name}
+                            price={item.product.price}
+                            removeItem={removeItem}
+                            deleteItem={deleteItem}
+                          />
+                        );
+                      })
+                    : console.log("no hay nada")}
+                </>
+              </table>
+            </div>
+            <p className="price"> Total price </p>
+            <p className="number-price">$ {total()}.00</p>
+            <SendButton
+              name="Send to kitchen"
+              secondclass="orders"
+            />
+          </div>
+        </form>
       </section>
     </div>
   );
