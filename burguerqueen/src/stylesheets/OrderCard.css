@@ -1,0 +1,36 @@
+.order-card{
+    width: 310px;
+    height: 500px;
+    background-color: #B4B06A;
+    border-radius: 10px; 
+    margin:169px 0px 0px 63px;
+  
+
+}
+
+.order-info{
+    position: absolute;
+    width: 265px;
+    height: 97px;
+    border-radius: 20px;
+    margin: 20px 0px 0px 23px;
+    background-color: #F3EDE2;
+    font-family: Quicksand;
+    font-size: 14px;
+    color: black;
+}
+.order-id{
+    font-weight: bold;
+    margin:12px 0px 0px 18px;
+}
+.order-date{
+    font-weight: bold;
+    margin:12px 0px 0px 18px;
+}
+.customer-name{
+    font-weight: bold;
+    margin:12px 0px 0px 18px;
+}
+.kitchen-done{
+    margin:400px 0px 0px 63px;
+}
