@@ -10,21 +10,22 @@ import { routerAuth } from './components/auth/routerAuth';
 
 function App() {
   const [user, setUser] = useState(null);
-  const [role, setRole] = useState(null);
+  const [roleAdmin, setRoleAdmin] = useState(null);
+  const [roleWaiter, setRoleWaiter] = useState(null);
   // user:¨
   // {email, rol}
   // use efect setUser 
-  const changeUser = (userEmail, role) => {
+  const changeUser = (userEmail, roleAdmin, roleWaiter) => {
     //aqui la logica de la funcion
     console.log(userEmail);
     setUser(userEmail);
-    setRole(role)
-    console.log(role)
+    setRoleAdmin(roleAdmin)
+    setRoleWaiter(roleWaiter)
   };
   //useEffect(() =>{},[])
   return (
     <>
-      {user ? <RouterProvider router={routerAuth(user, role, changeUser)}   /> : <RouterProvider router={routerNoAuth(changeUser)} />}
+      {user ? <RouterProvider router={routerAuth(user, roleAdmin, roleWaiter, changeUser)}   /> : <RouterProvider router={routerNoAuth(changeUser)} />}
    </>
   );
 }
