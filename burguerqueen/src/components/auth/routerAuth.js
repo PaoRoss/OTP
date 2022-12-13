@@ -4,19 +4,24 @@ import Menu from "./waiter/TakeOrder";
 import Admin from "./admin/Admin";
 import Kitchen from "./kitchen/Kitchen";
 
-export const routerAuth = (user, role, changeUser) => {
+export const routerAuth = (user, roleAdmin, roleWaiter, changeUser) => {
   console.log(user);
-  if (role === false) {
+  if (roleAdmin === false) {
+    if(roleWaiter){
+      return createBrowserRouter([
+        {
+           path: "/",
+           element: <Menu user={user} changeUser={changeUser} />,
+         }
+        ])
+    }
+  } if(!roleWaiter && !roleAdmin){
     return createBrowserRouter([
-     /* {
-        path: "/",
-        element: <Menu user={user} changeUser={changeUser} />,
-      },*/
-      {
-        path: "/",
-        element: <Kitchen user={user} changeUser={changeUser} />,
-      }
-    ]);
+       {
+         path: "/",
+         element: <Kitchen user={user} changeUser={changeUser} />,
+       }
+     ]);
   } else {
     return createBrowserRouter([
       {
@@ -24,8 +29,8 @@ export const routerAuth = (user, role, changeUser) => {
         element: <Admin user={user} changeUser={changeUser} />,
       }
     ]);
-  }
 };
+}
 
 // Antes --si quieren lo pueden borrar después--
 //   return createBrowserRouter([

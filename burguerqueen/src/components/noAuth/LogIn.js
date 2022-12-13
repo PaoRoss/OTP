@@ -28,7 +28,7 @@ function Login(props) {
      if(response.find(element => element.userName === user)){
       const userInfo = response.find(element =>  element.userName === user);
       console.log(userInfo)
-      props.changeUser(userInfo.userName, userInfo.isAdmin);
+      props.changeUser(userInfo.userName, userInfo.isAdmin, userInfo.isWaiter);
     }else{
       setErrorMessage(true);
       console.log('Tu ni siquiera trabajas aquí')
