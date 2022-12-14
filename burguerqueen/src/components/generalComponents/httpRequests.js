@@ -15,3 +15,15 @@ export const createOrder = (order) => {
     });
 }
 
+export const getPendingOrders = () => {
+  return axios.get(`${api}orders`)
+  .then(function (response) {
+    console.log(response);
+    return response
+  })
+  .catch(function (error) {
+    console.log(error);
+    return error
+  });
+};
+
