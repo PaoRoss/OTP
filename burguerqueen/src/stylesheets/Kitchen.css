@@ -1,5 +1,6 @@
 .cards-order-container{
     display: flex;
+    flex-wrap: wrap;
 }
 
 .logo-person {

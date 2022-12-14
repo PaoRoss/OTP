@@ -8,7 +8,7 @@ import SendButton from "../../generalComponents/SendButton";
 import axios from "axios";
 import { createOrder } from "../../generalComponents/httpRequests";
 import ReactModal from "react-modal";
-//import { Modalex } from "../../generalComponents/Modalex";
+
 
 function Menu({ user, changeUser }) {
   //al renderizar el componente se obtiene la data del menú de la API
@@ -122,22 +122,11 @@ function Menu({ user, changeUser }) {
 
   };
 
-
 const closemodal = () => {
     setModal(false);
     console.log(modal)
 };
-const customStyles = {
-  content : {
-    top                   : '50%',
-    left                  : '50%',
-    right                 : 'auto',
-    bottom                : 'auto',
-    marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)',
-    backgroundColor       : '#F0AA89'      
-  }
-};
+
   return (
     <div className="menuContainer">
       <NavBar changeUser={changeUser} />
