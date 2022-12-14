@@ -71,11 +71,13 @@
     font-size: 20px;
     color: #F3EDE2;
 }
-.button.center{
+
+.button.center {
     left: 240px;
     top: 135px;
 }
-.button.left{
+
+.button.left {
     left: 24px;
     top: 135px;
 }
@@ -181,6 +183,7 @@ label {
     width: 200px;
     padding: 0 20px;
 }
+
 .style-delete-column {
     width: 100px;
 }
@@ -225,7 +228,71 @@ label {
     color: #3D3838;
     cursor: pointer;
 }
-.send-button.orders{
+
+.send-button.orders {
     top: 745px;
     margin-left: 24px;
+}
+
+.Modal {
+    display: flex;
+    position:absolute;
+    background-color: whitesmoke;
+    width: 1194px;
+    height: 834px;
+    margin-top: -834px;
+    opacity: 0.8;
+}
+
+.Overlay {
+    background-color:#DE9468;
+}
+.modal-text {
+    position: absolute;
+    font-family: 'Quicksand';
+    font-size: 30px;
+    width: 700px;
+    height: 43px;
+    margin: 380px 0px 0px 300px;
+
+}
+.modal-button-left{
+    position: absolute;
+    width: 192px;
+    height: 47px;
+    background: #3D3838;
+    border-radius: 10px;
+    border: none;
+    font-family: 'Quicksand';
+    font-weight: 600;
+    font-size: 30px;
+    color: #F3EDE2;
+    left:400px;
+    text-align: center ;
+    top: 450px
+}
+.modal-button-right{
+    position: absolute;
+    width: 192px;
+    height: 47px;
+    background: #3D3838;
+    border-radius: 10px;
+    border: none;
+    font-family: 'Quicksand';
+    font-weight: 600;
+    font-size: 30px;
+    color: #F3EDE2;
+    text-align: center ;
+    left:650px;
+    top: 450px
+}
+.modal-button-right:hover {
+    background-color: #DE9468;
+    color: #3D3838;
+    cursor: pointer;
+}
+.modal-button-left:hover {
+    background-color: #B4B06A;
+    color: #3D3838;
+    cursor: pointer;
 }
