@@ -1,13 +1,12 @@
-
 td {
-    font-family: 'Quicksand';
-    font-weight: 600;
-    font-size: 20px;
-    text-align: center;
-    padding: 10px;
+  font-family: "Quicksand";
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+  padding: 10px;
 }
 
-img.deleteIcon{
-    width: 28px;
-    height: 28px;
+img.deleteIcon {
+  width: 28px;
+  height: 28px;
 }

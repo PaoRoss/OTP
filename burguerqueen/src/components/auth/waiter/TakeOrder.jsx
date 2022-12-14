@@ -9,7 +9,6 @@ import axios from "axios";
 import { createOrder } from "../../generalComponents/httpRequests";
 import ReactModal from "react-modal";
 
-
 function Menu({ user, changeUser }) {
   //al renderizar el componente se obtiene la data del menú de la API
   // y se le asigna el valor a la variable del Hook
@@ -100,11 +99,11 @@ function Menu({ user, changeUser }) {
     setClientName("");
   };
   const showModal = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     setModal(true);
-}
+  };
   const handleOrderInformation = (e) => {
-   e.preventDefault();
+    e.preventDefault();
     const orderInfo = {
       userId: user,
       client: clientName,
@@ -114,18 +113,17 @@ function Menu({ user, changeUser }) {
       dateEntry: new Date(),
     };
 
-   const promise = createOrder(orderInfo);
+    const promise = createOrder(orderInfo);
     promise.then((response) => {
-      setDefaultValues()
-      closemodal()
+      setDefaultValues();
+      closemodal();
     });
-
   };
 
-const closemodal = () => {
+  const closemodal = () => {
     setModal(false);
-    console.log(modal)
-};
+    console.log(modal);
+  };
 
   return (
     <div className="menuContainer">
@@ -180,7 +178,7 @@ const closemodal = () => {
       </main>
       <section className="order-summary-container">
         <h3 className="order-summary-text">Order summary</h3>
-       <form onSubmit={showModal}>
+        <form onSubmit={showModal}>
           <div className="input-customer-name">
             <label>Customer's Name </label>
             <input
@@ -222,15 +220,26 @@ const closemodal = () => {
             </div>
             <p className="price"> Total price </p>
             <p className="number-price">$ {total()}.00</p>
-            <SendButton
-              name="Send to kitchen"
-              secondclass="orders"
-            />
-            <ReactModal isOpen={modal} className="Modal" overlayClassName="Overlay" ariaHideApp={false}> 
-            <h2 className="modal-text">Do you want to send this order to the kitchen?</h2>
-            <button className="modal-button-left" onClick={handleOrderInformation}>YES</button>
-              <button className="modal-button-right"onClick={closemodal}>NO</button>
-              </ReactModal> 
+            <SendButton name="Send to kitchen" secondclass="orders" />
+            <ReactModal
+              isOpen={modal}
+              className="Modal"
+              overlayClassName="Overlay"
+              ariaHideApp={false}
+            >
+              <h2 className="modal-text">
+                Do you want to send this order to the kitchen?
+              </h2>
+              <button
+                className="modal-button-left"
+                onClick={handleOrderInformation}
+              >
+                YES
+              </button>
+              <button className="modal-button-right" onClick={closemodal}>
+                NO
+              </button>
+            </ReactModal>
           </div>
         </form>
       </section>
