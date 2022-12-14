@@ -7,6 +7,8 @@ import Button from "../../generalComponents/Button";
 import SendButton from "../../generalComponents/SendButton";
 import axios from "axios";
 import { createOrder } from "../../generalComponents/httpRequests";
+import ReactModal from "react-modal";
+//import { Modalex } from "../../generalComponents/Modalex";
 
 function Menu({ user, changeUser }) {
   //al renderizar el componente se obtiene la data del menú de la API
@@ -15,6 +17,7 @@ function Menu({ user, changeUser }) {
   const [dinner, setDinner] = useState([]);
   const [order, setOrder] = useState([]);
   const [clientName, setClientName] = useState("");
+  const [modal, setModal] = useState(false);
 
   useEffect(() => {
     getMenuBreakfast();
@@ -96,7 +99,10 @@ function Menu({ user, changeUser }) {
     setOrder([]);
     setClientName("");
   };
-
+  const showModal = (e) => {
+    e.preventDefault()
+    setModal(true);
+}
   const handleOrderInformation = (e) => {
    e.preventDefault();
     const orderInfo = {
@@ -108,12 +114,30 @@ function Menu({ user, changeUser }) {
       dateEntry: new Date(),
     };
 
-    const promise = createOrder(orderInfo);
+   const promise = createOrder(orderInfo);
     promise.then((response) => {
-      setDefaultValues();
+      setDefaultValues()
+      closemodal()
     });
+
   };
 
+
+const closemodal = () => {
+    setModal(false);
+    console.log(modal)
+};
+const customStyles = {
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)',
+    backgroundColor       : '#F0AA89'      
+  }
+};
   return (
     <div className="menuContainer">
       <NavBar changeUser={changeUser} />
@@ -167,7 +191,7 @@ function Menu({ user, changeUser }) {
       </main>
       <section className="order-summary-container">
         <h3 className="order-summary-text">Order summary</h3>
-       <form onSubmit={handleOrderInformation}>
+       <form onSubmit={showModal}>
           <div className="input-customer-name">
             <label>Customer's Name </label>
             <input
@@ -213,6 +237,11 @@ function Menu({ user, changeUser }) {
               name="Send to kitchen"
               secondclass="orders"
             />
+            <ReactModal isOpen={modal} className="Modal" overlayClassName="Overlay" ariaHideApp={false}> 
+            <h2 className="modal-text">Do you want to send this order to the kitchen?</h2>
+            <button className="modal-button-left" onClick={handleOrderInformation}>YES</button>
+              <button className="modal-button-right"onClick={closemodal}>NO</button>
+              </ReactModal> 
           </div>
         </form>
       </section>
