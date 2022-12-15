@@ -17,6 +17,7 @@ function Menu({ user, changeUser }) {
   const [order, setOrder] = useState([]);
   const [clientName, setClientName] = useState("");
   const [modal, setModal] = useState(false);
+  const [message, setMessage] = useState(false);
 
   useEffect(() => {
     getMenuBreakfast();
@@ -42,11 +43,9 @@ function Menu({ user, changeUser }) {
   function changeMenu(e) {
     if (e.target.value === "breakfast") {
       setOptionFood("breakfast");
-      console.log(breakfast);
     }
     if (e.target.value === "dinner") {
       setOptionFood("dinner");
-      console.log(dinner);
     }
   }
 
@@ -82,7 +81,6 @@ function Menu({ user, changeUser }) {
     );
     setOrder(filterItem);
   }
-  console.log(order);
 
   const total = () => {
     return order.reduce((acc, item) => acc + item.qty * item.product.price, 0);
@@ -90,7 +88,6 @@ function Menu({ user, changeUser }) {
 
   const handleChange = (e) => {
     e.preventDefault();
-    console.log(e.target.value);
     setClientName(e.target.value);
   };
 
@@ -116,13 +113,21 @@ function Menu({ user, changeUser }) {
     const promise = createOrder(orderInfo);
     promise.then((response) => {
       setDefaultValues();
-      closemodal();
+      showConfirmation();
     });
   };
 
   const closemodal = () => {
     setModal(false);
-    console.log(modal);
+  };
+
+  const showConfirmation = () => {
+    setMessage(true);
+    console.log("no se, jejejeje");
+    setTimeout(() => {
+      closemodal();
+      setMessage(false);
+    }, 5000);
   };
 
   return (
@@ -227,18 +232,30 @@ function Menu({ user, changeUser }) {
               overlayClassName="Overlay"
               ariaHideApp={false}
             >
-              <h2 className="modal-text">
-                Do you want to send this order to the kitchen?
-              </h2>
-              <button
-                className="modal-button-left"
-                onClick={handleOrderInformation}
-              >
-                YES
-              </button>
-              <button className="modal-button-right" onClick={closemodal}>
-                NO
-              </button>
+              <>
+                {message === false ? (
+                  <div className="confirmation-container">
+                    <h2 className="modal-text">
+                      Do you want to send this order to the kitchen?
+                    </h2>
+                    <button
+                      className="modal-button-left"
+                      onClick={handleOrderInformation}
+                    >
+                      YES
+                    </button>
+                    <button className="modal-button-right" onClick={closemodal}>
+                      NO
+                    </button>
+                  </div>
+                ) : (
+                  <div className="successful-message">
+                    <h2 className="modal-text">
+                      The order was created successfully!
+                    </h2>
+                  </div>
+                )}
+              </>
             </ReactModal>
           </div>
         </form>
