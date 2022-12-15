@@ -18,6 +18,8 @@ function Menu({ user, changeUser }) {
   const [clientName, setClientName] = useState("");
   const [modal, setModal] = useState(false);
   const [message, setMessage] = useState(false);
+  const [modalMessage, setModalMessage] = useState('The order was submitted succesfully!');
+  const [emptyOrderMessage, setEmptyOrderMessage] = useState(false);
 
   useEffect(() => {
     getMenuBreakfast();
@@ -52,6 +54,7 @@ function Menu({ user, changeUser }) {
   //Funciones que renderizan/muestra un componente por cada elemento del menu de la API
 
   function addItem(item) {
+    setEmptyOrderMessage(false);
     if (!order.find((element) => element.product.id === item.id)) {
       const updatedOrder = [...order, { product: item, qty: 1 }];
       setOrder(updatedOrder);
@@ -112,8 +115,14 @@ function Menu({ user, changeUser }) {
 
     const promise = createOrder(orderInfo);
     promise.then((response) => {
-      setDefaultValues();
-      showConfirmation();
+      if(response.status === 404){
+        setModalMessage('Error: the order was not submitted');
+        showConfirmation();
+      } else{
+        setModalMessage('The order was submitted succesfully!');
+        setDefaultValues();
+        showConfirmation();
+      }
     });
   };
 
@@ -129,6 +138,15 @@ function Menu({ user, changeUser }) {
       setMessage(false);
     }, 5000);
   };
+
+  const showEmptyOrderMessage = (e) =>{
+    e.preventDefault();
+    setEmptyOrderMessage(true)
+    console.log('nooo')
+    setTimeout(() => {
+      setEmptyOrderMessage(false);
+    }, 2000);
+  }
 
   return (
     <div className="menuContainer">
@@ -183,7 +201,7 @@ function Menu({ user, changeUser }) {
       </main>
       <section className="order-summary-container">
         <h3 className="order-summary-text">Order summary</h3>
-        <form onSubmit={showModal}>
+        <form onSubmit={order.length === 0 ? showEmptyOrderMessage : showModal}>
           <div className="input-customer-name">
             <label>Customer's Name </label>
             <input
@@ -191,6 +209,7 @@ function Menu({ user, changeUser }) {
               type="text"
               onChange={handleChange}
               value={clientName}
+              required
             ></input>
           </div>
           <div className="order-container">
@@ -226,6 +245,7 @@ function Menu({ user, changeUser }) {
             <p className="price"> Total price </p>
             <p className="number-price">$ {total()}.00</p>
             <SendButton name="Send to kitchen" secondclass="orders" />
+            {emptyOrderMessage ? <div className="empty-order-message">Fill the order with products</div> : showModal}
             <ReactModal
               isOpen={modal}
               className="Modal"
@@ -251,7 +271,7 @@ function Menu({ user, changeUser }) {
                 ) : (
                   <div className="successful-message">
                     <h2 className="modal-text">
-                      The order was created successfully!
+                      {modalMessage}
                     </h2>
                   </div>
                 )}
