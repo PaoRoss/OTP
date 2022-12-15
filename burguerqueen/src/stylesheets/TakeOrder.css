@@ -249,15 +249,23 @@ label {
   margin-left: 24px;
 }
 
-.Modal {
-  display: flex;
+.empty-order-message{
+  width: 500px;
+  height: 250px;
   position: absolute;
-  background-color: BLACK;
-  width: 1194px;
-  height: 834px;
-  margin-top: -834px;
   color: #f3ede2;
-  opacity: 0.9;
+  margin: 300px 0 0 50px
+}
+
+.Modal {
+    display: flex;
+    position: absolute;
+    background-color: BLACK;
+    width: 1194px;
+    height: 834px;
+    margin-top: -834px;
+    color: #F3EDE2;
+    opacity: 0.9;
 }
 
 .Overlay {
@@ -302,9 +310,9 @@ label {
   top: 450px;
 }
 .modal-button-right:hover {
-  background-color: #de9468;
-  color: #3d3838;
-  cursor: pointer;
+    background-color: rgb(255, 145, 0);    ;
+    color: #3D3838;
+    cursor: pointer;
 }
 .modal-button-left:hover {
   background-color: #b4b06a;
