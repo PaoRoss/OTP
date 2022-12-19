@@ -16,7 +16,7 @@ export const createOrder = (order) => {
 }
 
 export const getPendingOrders = () => {
-  return axios.get(`${api}orders`)
+  return axios.get(`${api}orders?status=pending`)
   .then(function (response) {
     console.log(response);
     return response
@@ -27,3 +27,15 @@ export const getPendingOrders = () => {
   });
 };
 
+export const updateOrderStatus = (id) => {
+ // console.log(order)
+  return axios.put(`${api}orders/${id}`, {status: 'delivering'})
+    .then(function (response) {
+      console.log(response);
+      return response
+    })
+    .catch(function (error) {
+      console.log(error);
+      return error
+    });
+}
