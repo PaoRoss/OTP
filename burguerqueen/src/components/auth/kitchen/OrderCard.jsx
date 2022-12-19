@@ -1,8 +1,14 @@
 import "../../../stylesheets/OrderCard.css";
 import React from "react";
 import Button from "../../generalComponents/Button";
+import { updateOrderStatus } from "../../generalComponents/httpRequests";
 
 function OrderCard({ order }) {
+  function handleDoneButton(){
+     updateOrderStatus(order.id)
+     console.log(order.id)
+  }
+ 
   return (
     <div className="order-card">
       <div className="order-info">
@@ -23,9 +29,9 @@ function OrderCard({ order }) {
           );
         })}
       </div>
-      <Button filter={order.name} name="Done" secondclass="kitchen-done" />
+      <Button filter={handleDoneButton} name="Done" secondclass="kitchen-done" />
     </div>
   );
-}
+      }
 
 export default OrderCard;
