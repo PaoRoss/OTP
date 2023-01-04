@@ -4,9 +4,10 @@ import { useState, useEffect } from 'react';
 import {
   RouterProvider,
   Route,
-} from 'react-router-dom';
+} from "react-router-dom";
 import { routerNoAuth } from './components/noAuth/routerNoAuth';
-import { routerAuth } from './components/auth/routerAuth';
+import {routerAuth} from './components/auth/routerAuth'
+
 
 function App() {
   const [user, setUser] = useState(null);
