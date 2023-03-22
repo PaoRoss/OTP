@@ -24,8 +24,8 @@
   font-size: 24px;
   line-height: 30px;
   border: none;
-  color: #f3ede2;
-  background-color: #101315;
+  color: #000000;
+  background-color: #ffffff;
 }
 .logout-button:hover {
   cursor: pointer;
@@ -118,7 +118,7 @@
   font-size: 20px;
   left: 65px;
   top: 758px;
-  color: #f3ede2;
+  color: #000000;
 }
 
 .order-sumary-container {
@@ -140,7 +140,7 @@
   line-height: 25px;
   text-align: center;
   border-bottom: 1px solid #9d9999;
-  color: #f3ede2;
+  color: #000000;
 }
 
 label {
@@ -155,23 +155,23 @@ label {
   font-size: 20px;
   line-height: 25px;
   text-align: center;
-  color: #f3ede2;
+  color: #000000;
 }
 
 .customer-name-input {
   font-family: "Quicksand";
-  font-size: 20px;
-  position: absolute;
-  width: 266px;
-  height: 43px;
-  left: 879px;
-  top: 158px;
-  background: #3d3838;
-  border-radius: 10px;
-  color: #f3ede2;
-  border: none;
-  outline: none;
-  padding-left: 24px;
+    font-size: 20px;
+    position: absolute;
+    width: 266px;
+    height: 43px;
+    left: 879px;
+    top: 158px;
+    background: #ffffff;
+    border-radius: 10px;
+    color: #101315;
+    outline: none;
+    padding-left: 24px;
+    border: solid #000;
 }
 
 .order-description {
@@ -179,18 +179,18 @@ label {
   height: 400px;
   width: 522px;
   top: 236px;
-  color: #f3ede2;
+  color: #000000;
   margin: 0px 24px 0px 14px;
   overflow-y: scroll;
 }
 
 .order-description::-webkit-scrollbar {
   width: 10px;
-  background-color: #f3ede2;
+  background-color: #000000;
   margin-right: 24px;
 }
 .order-description::-webkit-scrollbar-thumb {
-  background-color: #de9468;
+  background-color: #009845;
   border-radius: 10px;
 }
 
@@ -209,7 +209,7 @@ label {
   font-family: "Be Vietnam Pro";
   font-weight: 400;
   font-size: 24px;
-  color: #f3ede2;
+  color: #000000;
   margin-left: 24px;
 }
 
@@ -219,7 +219,7 @@ label {
   font-family: "Be Vietnam Pro";
   font-weight: 400;
   font-size: 24px;
-  color: #f3ede2;
+  color: #000000;
   margin-left: 390px;
 }
 
@@ -239,8 +239,8 @@ label {
 }
 
 .send-button:hover {
-  background-color: #f3ede2;
-  color: #3d3838;
+  background-color: #009845;
+  color: #000000;
   cursor: pointer;
 }
 

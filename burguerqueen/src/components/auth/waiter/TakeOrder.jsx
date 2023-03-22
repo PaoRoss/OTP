@@ -244,7 +244,7 @@ function Menu({ user, changeUser }) {
             </div>
             <p className="price"> Total price </p>
             <p className="number-price">$ {total()}.00</p>
-            <SendButton name="Send to kitchen" secondclass="orders" />
+            <SendButton name="Send order" secondclass="orders" />
             {emptyOrderMessage ? <div className="empty-order-message">Fill the order with products</div> : showModal}
             <ReactModal
               isOpen={modal}
