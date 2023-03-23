@@ -169,7 +169,7 @@ function Menu({ user, changeUser }) {
         </section>
         <div className="product-card-container">
           <>
-            {optionFood === "breakfast"
+            {optionFood === "dinner"
               ? breakfast.map((item) => {
                   return (
                     <ProductCard
@@ -191,6 +191,7 @@ function Menu({ user, changeUser }) {
                   );
                 })}
           </>
+
         </div>
         <img
           className="logo-person"
@@ -201,7 +202,7 @@ function Menu({ user, changeUser }) {
       </main>
       <section className="order-summary-container">
         <h3 className="order-summary-text">Order summary</h3>
-        <form onSubmit={order.length === 0 ? showEmptyOrderMessage : showModal}>
+        <form onSubmit={order.length === 0 ? showModal : showModal}>
           <div className="input-customer-name">
             <label>Customer's Name </label>
             <input

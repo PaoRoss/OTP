@@ -12,6 +12,7 @@ function ProductCard({ item, addItem }) {
       <p className="product-price">$ {item.price}.00</p>
     </div>
   );
+
 }
 
 export default ProductCard;

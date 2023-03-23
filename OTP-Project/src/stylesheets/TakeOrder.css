@@ -81,6 +81,8 @@
 .button.center {
   left: 240px;
   top: 135px;
+  height: 46px;
+  width: 160px;
 }
 
 .button.left {
