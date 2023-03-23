@@ -89,6 +89,7 @@ function Menu({ user, changeUser }) {
     return order.reduce((acc, item) => acc + item.qty * item.product.price, 0);
   };
 
+
   const handleChange = (e) => {
     e.preventDefault();
     setClientName(e.target.value);
@@ -156,20 +157,20 @@ function Menu({ user, changeUser }) {
           <Button
             filter={changeMenu}
             value="breakfast"
-            name="Breakfast"
+            name="Accesories"
             secondclass="left"
           />
           <Button
             filter={changeMenu}
             value="dinner"
-            name="Lunch & Dinner"
+            name="Filters"
             secondclass="center"
           />
           <div className="lineOne" />
         </section>
         <div className="product-card-container">
           <>
-            {optionFood === "dinner"
+            {optionFood === "breakfast"
               ? breakfast.map((item) => {
                   return (
                     <ProductCard
@@ -244,7 +245,7 @@ function Menu({ user, changeUser }) {
               </table>
             </div>
             <p className="price"> Total price </p>
-            <p className="number-price">$ {total()}.00</p>
+            <p className="number-price">$ {total().toFixed(2)}</p>
             <SendButton name="Send order" secondclass="orders" />
             {emptyOrderMessage ? <div className="empty-order-message">Fill the order with products</div> : showModal}
             <ReactModal

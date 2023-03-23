@@ -9,7 +9,7 @@ function ProductCard({ item, addItem }) {
     <div className="product-card" onClick={addProduct}>
       <p className="product-id"> {item.id} </p>
       <p className="product-name">{item.name}</p>
-      <p className="product-price">$ {item.price}.00</p>
+      <p className="product-price">$ {item.price}</p>
     </div>
   );
 
